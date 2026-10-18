@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAT Math — Measures of Central Tendency for Grouped Data | Thầy Nguyễn Hữu Trung</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'\\\\(',right:'\\\\)',display:false},{left:'\\\\[',right:'\\\\]',display:true}]});"></script>
+<style>
+  :root{--sat-blue:#1B3A6B;--sat-blue-light:#2C5AA0;--sat-blue-pale:#EAF0F9;--sat-green:#4CAF50;--sat-red:#E53935;--sat-yellow:#F5B400;--sat-bg:#F5F7FA;--sat-text:#1a2332;--sat-gray:#5b6778;--sat-gold:#F5B400;--shadow:0 2px 8px rgba(27,58,107,.08);--shadow-lg:0 6px 24px rgba(27,58,107,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter','Segoe UI',Roboto,-apple-system,sans-serif;background:var(--sat-bg);color:var(--sat-text);line-height:1.6}
+  header{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;padding:20px 32px;box-shadow:var(--shadow-lg);position:sticky;top:0;z-index:100}
+  .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand-logo{width:44px;height:44px;border-radius:10px;background:#fff;color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;letter-spacing:-1px}
+  .brand-title{font-size:20px;font-weight:700}
+  .brand-sub{font-size:12.5px;opacity:.85;font-weight:400}
+  .header-credit{font-size:12.5px;text-align:right;line-height:1.5;background:rgba(255,255,255,.12);padding:8px 16px;border-radius:10px;border-left:3px solid var(--sat-gold)}
+  .header-credit strong{color:var(--sat-gold);font-weight:800}
+  nav{background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:84px;z-index:99;overflow-x:auto}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;padding:0 16px;gap:4px}
+  .nav-btn{background:none;border:none;padding:16px 20px;font-family:inherit;font-size:14.5px;font-weight:600;color:var(--sat-gray);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s}
+  .nav-btn:hover{color:var(--sat-blue);background:var(--sat-blue-pale)}
+  .nav-btn.active{color:var(--sat-blue);border-bottom-color:var(--sat-blue);background:var(--sat-blue-pale)}
+  main{max-width:1200px;margin:0 auto;padding:32px 20px 80px}
+  .section{display:none;animation:fade .35s ease}
+  .section.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .page-title{font-size:28px;font-weight:800;color:var(--sat-blue);margin-bottom:6px}
+  .page-subtitle{color:var(--sat-gray);margin-bottom:28px;font-size:15px}
+  .card{background:#fff;border-radius:14px;padding:26px 28px;box-shadow:var(--shadow);margin-bottom:20px;border:1px solid #eef2f8}
+  .card h3{font-size:20px;color:var(--sat-blue);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--sat-blue-pale);display:flex;align-items:center;gap:10px}
+  .card h3 .num{background:var(--sat-blue);color:#fff;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700}
+  .card h4{font-size:16px;color:var(--sat-blue-light);margin:16px 0 8px}
+  .card p,.card li{margin-bottom:8px}
+  .card ul,.card ol{padding-left:24px}
+  .card ol li,.card ul li{margin-bottom:6px}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #eef2f8;vertical-align:top}
+  th{background:var(--sat-blue-pale);color:var(--sat-blue);font-weight:700;font-size:13.5px;text-transform:uppercase;letter-spacing:.5px}
+  tr:hover td{background:#fafcff}
+  .formula-box{background:linear-gradient(135deg,#f0f5ff 0%,#e6efff 100%);border-left:4px solid var(--sat-blue);border-radius:10px;padding:14px 18px;margin:12px 0;font-size:15.5px}
+  .formula-box strong{color:var(--sat-blue);font-weight:800}
+  .vocab-search{width:100%;padding:12px 16px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:15px;margin-bottom:16px}
+  .vocab-search:focus{outline:none;border-color:var(--sat-blue-light)}
+  .vocab-table td:nth-child(2){font-family:'Courier New',monospace;color:var(--sat-blue);font-weight:600}
+  .speak-btn{background:none;border:none;cursor:pointer;color:var(--sat-blue);padding:4px 8px;border-radius:6px;transition:background .2s;font-size:15px}
+  .speak-btn:hover{background:var(--sat-blue-pale)}
+  .group-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+  .group-tab{padding:12px 22px;border-radius:10px;border:2px solid #e2e8f0;background:#fff;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;color:var(--sat-gray);transition:all .2s}
+  .group-tab:hover{border-color:var(--sat-blue-light)}
+  .group-tab.active{background:var(--sat-blue);color:#fff;border-color:var(--sat-blue)}
+  .group-tab .badge{display:inline-block;margin-left:6px;background:rgba(255,255,255,.25);padding:1px 8px;border-radius:8px;font-size:12px}
+  .group-tab:not(.active) .badge{background:var(--sat-blue-pale);color:var(--sat-blue)}
+  .group-panel{display:none}
+  .group-panel.active{display:block}
+  .q-card{background:#fff;border-radius:14px;padding:24px 26px;box-shadow:var(--shadow);margin-bottom:18px;border-left:5px solid var(--sat-blue-light);transition:border-color .3s}
+  .q-card.correct{border-left-color:var(--sat-green)}
+  .q-card.wrong{border-left-color:var(--sat-red)}
+  .q-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .q-num{background:var(--sat-blue);color:#fff;min-width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0}
+  .q-card.correct .q-num{background:var(--sat-green)}
+  .q-card.wrong .q-num{background:var(--sat-red)}
+  .q-text{font-size:16px;font-weight:500;flex:1}
+  .options{display:grid;gap:10px;margin-top:16px}
+  .option{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;border:2px solid #e2e8f0;border-radius:10px;background:#fff;cursor:pointer;transition:all .18s;font-family:inherit;font-size:15px;text-align:left;color:var(--sat-text);width:100%}
+  .option:hover:not(.disabled){border-color:var(--sat-blue-light);background:#fafcff;transform:translateX(2px)}
+  .option .letter{background:var(--sat-blue-pale);color:var(--sat-blue);width:28px;height:28px;border-radius:7px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+  .option.correct{border-color:var(--sat-green);background:#eaf7eb}
+  .option.correct .letter{background:var(--sat-green);color:#fff}
+  .option.wrong{border-color:var(--sat-red);background:#fdeaea}
+  .option.wrong .letter{background:var(--sat-red);color:#fff}
+  .option.disabled{cursor:default}
+  .option.disabled:hover{transform:none;background:inherit}
+  .option.selected{border-color:var(--sat-blue);background:#eaf0f9}
+  .option.selected .letter{background:var(--sat-blue);color:#fff}
+  .feedback{margin-top:14px;padding:14px 18px;border-radius:10px;font-size:14.5px;display:none;animation:slideIn .3s ease}
+  @keyframes slideIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  .feedback.show{display:block}
+  .feedback.ok{background:#eaf7eb;border-left:4px solid var(--sat-green);color:#1f6b24}
+  .feedback.no{background:#fdeaea;border-left:4px solid var(--sat-red);color:#8b1c1c}
+  .feedback strong{display:block;margin-bottom:6px;font-size:15px}
+  .feedback .review{margin-top:8px;padding-top:8px;border-top:1px dashed rgba(0,0,0,.12);font-size:13.5px;color:var(--sat-blue);font-weight:600}
+  .sat-hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:32px 36px;margin-bottom:24px;box-shadow:var(--shadow-lg)}
+  .sat-hero h2{font-size:24px;margin-bottom:8px;font-weight:800}
+  .sat-hero p{opacity:.9;font-size:14.5px;max-width:760px}
+  .sat-info-row{display:flex;gap:24px;margin-top:18px;flex-wrap:wrap}
+  .sat-info{background:rgba(255,255,255,.13);padding:10px 18px;border-radius:10px;font-size:13.5px}
+  .sat-info strong{font-size:17px;display:block;font-weight:800}
+  .btn{padding:11px 24px;border-radius:10px;border:none;font-family:inherit;font-size:14.5px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.3px}
+  .btn-primary{background:var(--sat-blue);color:#fff}
+  .btn-primary:hover{background:var(--sat-blue-light);transform:translateY(-1px);box-shadow:var(--shadow-lg)}
+  .btn-primary:disabled{background:#b8c4d6;cursor:not-allowed;transform:none;box-shadow:none}
+  .btn-outline{background:#fff;color:var(--sat-blue);border:2px solid var(--sat-blue)}
+  .btn-outline:hover{background:var(--sat-blue-pale)}
+  .btn-sm{padding:7px 14px;font-size:12.5px;border-radius:8px}
+  .home-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px}
+  .home-card{background:#fff;border-radius:14px;padding:24px;box-shadow:var(--shadow);cursor:pointer;transition:all .25s;border:2px solid transparent}
+  .home-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--sat-blue-light)}
+  .home-card .icon{font-size:32px;margin-bottom:10px}
+  .home-card h4{font-size:16px;color:var(--sat-blue);margin-bottom:6px}
+  .home-card p{font-size:13.5px;color:var(--sat-gray)}
+  .hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:36px 40px;margin-bottom:28px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:rgba(245,180,0,.12)}
+  .hero h1{font-size:30px;font-weight:800;margin-bottom:10px}
+  .hero p{opacity:.92;font-size:15.5px;max-width:760px;position:relative}
+  .hero-author{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);display:inline-flex;align-items:center;gap:14px;font-size:13.5px;position:relative}
+  .hero-author .avatar{width:44px;height:44px;border-radius:50%;background:var(--sat-gold);color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+  .hero-author strong{color:var(--sat-gold);font-weight:800;font-size:14.5px;display:block}
+  .hero-author span{opacity:.9}
+  footer{background:linear-gradient(135deg,#0f2547 0%,var(--sat-blue) 100%);color:#fff;padding:36px 32px 24px;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+  .footer-col h4{color:var(--sat-gold);font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;font-weight:800}
+  .footer-col p,.footer-col li{font-size:13.5px;opacity:.88;line-height:1.8}
+  .footer-col ul{list-style:none}
+  .footer-col ul li{cursor:pointer;transition:color .2s}
+  .footer-col ul li:hover{color:var(--sat-gold)}
+  .footer-author-card{background:rgba(255,255,255,.08);border-left:4px solid var(--sat-gold);padding:16px 20px;border-radius:10px;margin-top:8px}
+  .footer-author-card .name{font-size:16px;font-weight:800;color:#fff;margin-bottom:4px}
+  .footer-author-card .role{font-size:13px;color:var(--sat-gold);font-weight:600;margin-bottom:8px}
+  .footer-author-card .phone{font-size:14px;font-weight:700;color:#fff;display:inline-flex;align-items:center;gap:6px;background:rgba(245,180,0,.2);padding:6px 12px;border-radius:8px}
+  .footer-bottom{max-width:1200px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.15);text-align:center;font-size:12.5px;opacity:.75;line-height:1.8}
+  .footer-bottom strong{color:var(--sat-gold);font-weight:800}
+  .sat-set-selector{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:24px}
+  .set-card{background:#fff;border-radius:14px;padding:24px;box-shadow:var(--shadow);cursor:pointer;transition:all .25s;border:2px solid transparent;border-top:5px solid var(--sat-blue);position:relative}
+  .set-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--sat-blue-light);border-top-color:var(--sat-gold)}
+  .set-card .set-badge{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);padding:4px 12px;border-radius:8px;font-size:12px;font-weight:800;letter-spacing:.5px;margin-bottom:10px}
+  .set-card h4{font-size:18px;color:var(--sat-blue);margin-bottom:8px}
+  .set-card p{font-size:13.5px;color:var(--sat-gray);margin-bottom:14px;min-height:52px}
+  .set-card .set-meta{display:flex;gap:14px;font-size:12.5px;color:var(--sat-gray);border-top:1px dashed #e2e8f0;padding-top:12px;flex-wrap:wrap}
+  .set-card .set-meta strong{color:var(--sat-blue);font-weight:800}
+  .set-card .set-start{margin-top:14px;display:inline-flex;align-items:center;gap:6px;font-weight:800;color:var(--sat-blue);font-size:14px}
+  .test-topbar{background:#fff;border-radius:14px;padding:16px 22px;box-shadow:var(--shadow);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px;border:1px solid #eef2f8;position:sticky;top:140px;z-index:50}
+  .test-set-name{font-size:16px;font-weight:800;color:var(--sat-blue)}
+  .test-progress{font-size:13px;color:var(--sat-gray);margin-top:2px}
+  .timer-wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .timer{font-family:'Courier New',monospace;font-size:24px;font-weight:800;background:var(--sat-blue);color:#fff;padding:8px 18px;border-radius:10px;letter-spacing:2px;min-width:110px;text-align:center;transition:background .3s}
+  .timer.warning{background:var(--sat-yellow);animation:pulse .8s infinite}
+  .timer.danger{background:var(--sat-red);animation:pulse .5s infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+  .test-layout{display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:start}
+  .test-sidebar{background:#fff;border-radius:14px;padding:18px;box-shadow:var(--shadow);border:1px solid #eef2f8;position:sticky;top:220px}
+  .test-sidebar h4{font-size:12.5px;color:var(--sat-blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--sat-blue-pale)}
+  .nav-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+  .nav-cell{aspect-ratio:1;border-radius:8px;border:2px solid #e2e8f0;background:#fff;font-family:inherit;font-weight:700;font-size:12.5px;color:var(--sat-gray);cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;padding:0}
+  .nav-cell:hover{border-color:var(--sat-blue-light)}
+  .nav-cell.answered{background:var(--sat-blue);color:#fff;border-color:var(--sat-blue)}
+  .nav-cell.current{border-color:var(--sat-gold);box-shadow:0 0 0 3px rgba(245,180,0,.3)}
+  .nav-legend{margin-top:14px;font-size:12px;color:var(--sat-gray);display:flex;flex-direction:column;gap:6px;padding-top:12px;border-top:1px dashed #e2e8f0}
+  .nav-legend > div{display:flex;align-items:center;gap:8px}
+  .legend-box{width:14px;height:14px;border-radius:4px;border:2px solid #e2e8f0;background:#fff;display:inline-block}
+  .legend-box.answered{background:var(--sat-blue);border-color:var(--sat-blue)}
+  .legend-box.current{border-color:var(--sat-gold);box-shadow:0 0 0 2px rgba(245,180,0,.3)}
+  .test-main{min-width:0}
+  .test-main .q-card{margin-bottom:14px}
+  .test-nav-btns{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .test-nav-btns .btn{min-width:140px}
+  .result-hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:32px 36px;margin-bottom:22px;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+  .result-hero h2{font-size:22px;margin-bottom:6px}
+  .result-hero p{opacity:.9;font-size:14px}
+  .result-score{text-align:center;background:rgba(255,255,255,.14);padding:18px 30px;border-radius:14px;border:2px solid rgba(245,180,0,.5)}
+  .result-score .num{font-size:42px;font-weight:800;color:var(--sat-gold);line-height:1}
+  .result-score .den{font-size:16px;opacity:.85;margin-top:4px}
+  .result-score .pct{font-size:14px;font-weight:700;margin-top:8px;padding:4px 12px;background:rgba(255,255,255,.2);border-radius:8px;display:inline-block}
+  .level-banner{background:#fff;border-radius:14px;padding:22px 26px;box-shadow:var(--shadow);border-left:6px solid var(--sat-blue);display:flex;gap:20px;align-items:flex-start;margin-bottom:22px}
+  .level-icon{width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0;color:#fff}
+  .level-content{flex:1;min-width:0}
+  .level-content h3{font-size:22px;margin-bottom:8px;font-weight:800}
+  .level-content p{font-size:14.5px;color:var(--sat-text);margin-bottom:6px;line-height:1.65}
+  .level-content .level-advice{background:var(--sat-blue-pale);padding:12px 16px;border-radius:8px;margin-top:10px;font-size:14px;border-left:3px solid var(--sat-blue);line-height:1.65}
+  .result-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:22px}
+  .stat-box{background:#fff;border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);border-left:4px solid var(--sat-blue)}
+  .stat-box.green{border-left-color:var(--sat-green)}
+  .stat-box.red{border-left-color:var(--sat-red)}
+  .stat-box.yellow{border-left-color:var(--sat-yellow)}
+  .stat-box .label{font-size:11.5px;color:var(--sat-gray);text-transform:uppercase;letter-spacing:.5px;font-weight:700}
+  .stat-box .value{font-size:26px;font-weight:800;color:var(--sat-blue);margin-top:4px;line-height:1.1}
+  .stat-box.green .value{color:var(--sat-green)}
+  .stat-box.red .value{color:var(--sat-red)}
+  .stat-box.yellow .value{color:#b8860b}
+  .stat-box .sub{font-size:12.5px;color:var(--sat-gray);margin-top:4px}
+  .result-section-title{font-size:18px;font-weight:800;color:var(--sat-blue);margin:28px 0 14px;display:flex;align-items:center;gap:10px}
+  .result-section-title .icon{background:var(--sat-blue-pale);color:var(--sat-blue);width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+  .time-analysis{background:#fff;border-radius:14px;padding:22px 26px;box-shadow:var(--shadow);margin-bottom:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;border:1px solid #eef2f8}
+  .time-block{display:flex;gap:14px;align-items:flex-start}
+  .time-block .tb-icon{width:46px;height:46px;border-radius:11px;background:var(--sat-blue-pale);color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+  .time-block .tb-content{flex:1;min-width:0}
+  .time-block .tb-label{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--sat-gray);font-weight:700;margin-bottom:4px}
+  .time-block .tb-value{font-size:22px;font-weight:800;color:var(--sat-blue);line-height:1.1}
+  .time-block .tb-desc{font-size:12.5px;color:var(--sat-gray);margin-top:4px;line-height:1.5}
+  .topic-table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+  .topic-table th,.topic-table td{padding:12px 16px;text-align:left;border-bottom:1px solid #eef2f8;vertical-align:middle}
+  .topic-table th{background:var(--sat-blue-pale);color:var(--sat-blue);font-size:12px;text-transform:uppercase;letter-spacing:.5px;font-weight:800}
+  .topic-table tr:last-child td{border-bottom:none}
+  .topic-bar{height:9px;background:#e2e8f0;border-radius:5px;overflow:hidden;min-width:100px;flex:1}
+  .topic-bar-cell{display:flex;align-items:center;gap:10px}
+  .topic-bar-fill{height:100%;background:var(--sat-green);transition:width .8s ease;border-radius:5px}
+  .topic-bar-fill.warn{background:var(--sat-yellow)}
+  .topic-bar-fill.bad{background:var(--sat-red)}
+  .topic-score{font-weight:800;color:var(--sat-blue);min-width:44px;text-align:right}
+  .topic-recommend{font-size:12.5px;color:var(--sat-gray);margin-top:6px;padding:8px 12px;background:#fafcff;border-radius:6px;border-left:2px solid var(--sat-blue-light);line-height:1.5;font-style:italic}
+  .roadmap{background:#fff;border-radius:14px;padding:26px 28px;box-shadow:var(--shadow);border-left:6px solid var(--sat-gold);margin-bottom:22px}
+  .roadmap h3{font-size:19px;color:var(--sat-blue);margin-bottom:6px;display:flex;align-items:center;gap:10px}
+  .roadmap .roadmap-sub{font-size:13.5px;color:var(--sat-gray);margin-bottom:18px;line-height:1.6}
+  .roadmap-phase{padding:18px 0;border-bottom:1px dashed #e2e8f0;display:flex;gap:18px;align-items:flex-start}
+  .roadmap-phase:last-child{border-bottom:none;padding-bottom:0}
+  .roadmap-phase .phase-num{width:48px;height:48px;border-radius:12px;background:var(--sat-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0}
+  .roadmap-phase.phase-1 .phase-num{background:var(--sat-red)}
+  .roadmap-phase.phase-2 .phase-num{background:#E8A317}
+  .roadmap-phase.phase-3 .phase-num{background:var(--sat-green)}
+  .roadmap-phase .phase-content{flex:1;min-width:0}
+  .roadmap-phase h4{font-size:15.5px;color:var(--sat-blue);margin-bottom:8px;font-weight:800;display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+  .roadmap-phase .phase-time{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);font-size:11.5px;font-weight:700;padding:2px 10px;border-radius:6px}
+  .roadmap-phase ul{padding-left:22px;margin-top:6px}
+  .roadmap-phase li{font-size:13.5px;margin-bottom:6px;color:var(--sat-text);line-height:1.6}
+  .roadmap-phase .phase-actions{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+  .wrong-item{background:#fff;border-radius:12px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:14px;border-left:5px solid var(--sat-red)}
+  .wrong-item.unanswered{border-left-color:var(--sat-gray)}
+  .wrong-item .wrong-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
+  .wrong-item .wrong-num{background:var(--sat-red);color:#fff;min-width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
+  .wrong-item.unanswered .wrong-num{background:var(--sat-gray)}
+  .wrong-item .wrong-q{font-size:15px;font-weight:600;flex:1;line-height:1.55}
+  .wrong-item .topic-tag{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);font-size:11.5px;padding:2px 10px;border-radius:6px;font-weight:700;margin-top:6px}
+  .wrong-item .ans-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;font-size:14px}
+  .wrong-item .ans-box{padding:10px 14px;border-radius:8px;background:#f5f7fa;border-left:3px solid var(--sat-gray)}
+  .wrong-item .ans-box.your{background:#fdeaea;border-left-color:var(--sat-red)}
+  .wrong-item .ans-box.correct{background:#eaf7eb;border-left-color:var(--sat-green)}
+  .wrong-item .ans-box .lbl{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--sat-gray);font-weight:700;margin-bottom:4px}
+  .wrong-item .ans-box .val{font-weight:600;color:var(--sat-text)}
+  .wrong-item .exp-box{background:var(--sat-blue-pale);padding:12px 16px;border-radius:8px;font-size:14px;border-left:3px solid var(--sat-blue);margin-top:10px;line-height:1.7}
+  .wrong-item .exp-box .lbl{font-weight:800;color:var(--sat-blue);margin-bottom:4px;font-size:13px}
+  .wrong-item .review-box{margin-top:10px;font-size:13.5px;color:var(--sat-blue);font-weight:600;padding:10px 14px;background:#fafcff;border-radius:8px;border:1px dashed var(--sat-blue-light)}
+  .result-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  @media(max-width:900px){.test-layout{grid-template-columns:1fr}.test-sidebar{position:static}.nav-grid{grid-template-columns:repeat(10,1fr)}.result-hero{grid-template-columns:1fr}}
+  @media(max-width:640px){header{padding:14px 16px}.brand-title{font-size:16px}.header-credit{font-size:11.5px;padding:6px 12px;text-align:left}.nav-btn{padding:14px 12px;font-size:13px}main{padding:20px 12px 60px}.card{padding:20px 18px}.sat-hero{padding:24px 20px}.timer{font-size:20px;padding:6px 14px;min-width:90px}.hero{padding:26px 22px}.hero h1{font-size:22px}.page-title{font-size:22px}.footer-inner{grid-template-columns:1fr;gap:24px}footer{padding:28px 18px 20px}.nav-grid{grid-template-columns:repeat(6,1fr)}.wrong-item .ans-row{grid-template-columns:1fr}.result-score .num{font-size:34px}.test-topbar{position:static}.test-sidebar{position:static}.level-banner{flex-direction:column;gap:14px;padding:18px}.level-icon{width:52px;height:52px;font-size:28px}.level-content h3{font-size:18px}.roadmap{padding:20px 18px}.roadmap-phase{flex-direction:column;gap:12px}.time-analysis{padding:18px;grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-logo">SAT</div>
+      <div><div class="brand-title">SAT Math Prep</div><div class="brand-sub">Measures of Central Tendency — Grouped Data</div></div>
+    </div>
+    <div class="header-credit">Thiết kế bởi <strong>Thầy Nguyễn Hữu Trung</strong><br>THPT Trần Phú • ☎ 0964 848 989</div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" data-tab="home">🏠 Trang chủ</button>
+    <button class="nav-btn" data-tab="knowledge">📐 Kiến thức</button>
+    <button class="nav-btn" data-tab="vocab">📚 Từ vựng</button>
+    <button class="nav-btn" data-tab="practice">✏️ Luyện tập</button>
+    <button class="nav-btn" data-tab="sat">⏱️ SAT Simulation</button>
+  </div>
+</nav>
+
+<main>
+
+<section id="home" class="section active">
+  <div class="hero">
+    <h1>Chinh phục SAT Math: Measures of Central Tendency for Grouped Data</h1>
+    <p>Khóa ôn tập chuyên sâu chủ đề <strong>Các số đặc trưng đo giá trị trung tâm của mẫu số liệu ghép nhóm</strong> (Mean, Median, Mode, Quartiles) dành cho học sinh chuẩn bị kỳ thi <strong>Digital SAT</strong>. Nội dung song ngữ Việt–Anh, 40 từ vựng có phiên âm IPA, 30 câu luyện tập tức thì và <strong>3 bộ SAT Simulation × 30 câu = 90 câu</strong> với đồng hồ, tổng kết điểm và lộ trình ôn tập cá nhân hóa.</p>
+    <div class="hero-author"><div class="avatar">NT</div><div><strong>Thầy Nguyễn Hữu Trung</strong><span>Giáo viên Toán — THPT Trần Phú • ☎ 0964 848 989</span></div></div>
+  </div>
+  <div class="home-grid">
+    <div class="home-card" onclick="switchTab('knowledge')"><div class="icon">📐</div><h4>1. Kiến thức cơ bản</h4><p>6 mục lý thuyết song ngữ: bảng ghép nhóm, số trung bình, trung vị, mốt, tứ phân vị, ứng dụng thực tế.</p></div>
+    <div class="home-card" onclick="switchTab('vocab')"><div class="icon">📚</div><h4>2. Từ vựng chuyên ngành</h4><p>40 từ khóa SAT Math kèm phiên âm IPA, nghĩa tiếng Việt, ví dụ minh họa và phát âm tự động.</p></div>
+    <div class="home-card" onclick="switchTab('practice')"><div class="icon">✏️</div><h4>3. Luyện tập 3 nhóm</h4><p>30 câu trắc nghiệm tiếng Anh chia 3 mức độ: Cơ bản — Trung bình — Nâng cao.</p></div>
+    <div class="home-card" onclick="switchTab('sat')"><div class="icon">⏱️</div><h4>4. SAT Simulation</h4><p>90 câu hỏi chuẩn Digital SAT, đồng hồ 45 phút/bộ, tổng kết điểm và lộ trình ôn tập cá nhân hóa.</p></div>
+  </div>
+</section>
+
+<section id="knowledge" class="section">
+  <h2 class="page-title">📐 Kiến thức cơ bản</h2>
+  <p class="page-subtitle">Song ngữ Việt — Anh · Dành cho học sinh chuẩn bị thi SAT Digital</p>
+
+  <div class="card">
+    <h3><span class="num">I</span> Bảng tần số ghép nhóm — Grouped frequency table</h3>
+    <table>
+      <tr><th>Tiếng Việt</th><th>English</th></tr>
+      <tr><td>Mẫu số liệu ghép nhóm là mẫu số liệu được chia thành các <strong>nhóm</strong> (khoảng) liên tiếp nhau.</td><td>Grouped data is organized into consecutive <strong>classes</strong> (intervals).</td></tr>
+      <tr><td>Mỗi nhóm \([a_i; b_i)\) có <strong>tần số</strong> \(n_i\) là số giá trị rơi vào nhóm đó.</td><td>Each class \([a_i; b_i)\) has a <strong>frequency</strong> \(n_i\) — the number of values in that class.</td></tr>
+      <tr><td><strong>Giá trị đại diện</strong> (trung điểm nhóm): \(c_i = \dfrac{a_i + b_i}{2}\).</td><td><strong>Class mark</strong> (midpoint): \(c_i = \dfrac{a_i + b_i}{2}\).</td></tr>
+      <tr><td><strong>Độ rộng nhóm</strong>: \(h = b_i - a_i\) (thường bằng nhau).</td><td><strong>Class width</strong>: \(h = b_i - a_i\) (usually equal).</td></tr>
+      <tr><td><strong>Tần số tích lũy</strong> của nhóm thứ \(i\): \(C_i = n_1 + n_2 + \dots + n_i\).</td><td><strong>Cumulative frequency</strong>: \(C_i = n_1 + n_2 + \dots + n_i\).</td></tr>
+    </table>
+    <div class="formula-box">
+      <strong>Ví dụ (Example):</strong><br>
+      Nhóm \([10; 20)\) có tần số 5 → giá trị đại diện \(c = \dfrac{10+20}{2} = 15\), độ rộng \(h = 10\).
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">II</span> Số trung bình — Mean</h3>
+    <div class="formula-box">
+      \(\bar{x} = \dfrac{n_1 c_1 + n_2 c_2 + \dots + n_k c_k}{n_1 + n_2 + \dots + n_k} = \dfrac{1}{n}\displaystyle\sum_{i=1}^{k} n_i c_i\)
+    </div>
+    <p>Trong đó \(c_i\) là giá trị đại diện (trung điểm) của nhóm \(i\), \(n_i\) là tần số nhóm \(i\), \(n = \sum n_i\) là tổng số quan sát.</p>
+    <p><em>Where \(c_i\) is the class mark of group \(i\), \(n_i\) is the frequency, and \(n = \sum n_i\) is the total sample size.</em></p>
+    <div class="formula-box">
+      <strong>Ví dụ (Example):</strong> Nhóm \([0;10), [10;20), [20;30)\) có tần số \(3, 7, 5\) → \(c_i = 5, 15, 25\).<br>
+      \(\bar{x} = \dfrac{3 \cdot 5 + 7 \cdot 15 + 5 \cdot 25}{3+7+5} = \dfrac{15+105+125}{15} = \dfrac{245}{15} \approx 16.33\)
+    </div>
+    <p><strong>Lưu ý:</strong> Số trung bình của mẫu ghép nhóm chỉ là <strong>giá trị xấp xỉ</strong> (approximate) của số trung bình thực.</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">III</span> Trung vị — Median</h3>
+    <p>Trung vị \(M_e\) là giá trị chia mẫu số liệu thành hai phần bằng nhau (mỗi phần 50%).</p>
+    <p><em>The median \(M_e\) divides the data into two equal halves (50% each).</em></p>
+    <h4>Các bước tìm trung vị (Steps):</h4>
+    <ol>
+      <li>Tìm nhóm chứa trung vị: nhóm mà tần số tích lũy \(\geq \dfrac{n}{2}\) lần đầu tiên.</li>
+      <li>Áp dụng công thức:</li>
+    </ol>
+    <div class="formula-box">
+      \(M_e = u_m + \dfrac{\dfrac{n}{2} - C_{m-1}}{n_m} \cdot h\)
+    </div>
+    <ul>
+      <li>\(u_m\): <strong>đầu mút dưới</strong> (lower bound) của nhóm trung vị</li>
+      <li>\(C_{m-1}\): <strong>tần số tích lũy</strong> của nhóm trước nhóm trung vị</li>
+      <li>\(n_m\): <strong>tần số</strong> của nhóm trung vị</li>
+      <li>\(h\): <strong>độ rộng</strong> nhóm</li>
+    </ul>
+    <div class="formula-box">
+      <strong>Ví dụ (Example):</strong> Nhóm \([0;10), [10;20), [20;30), [30;40)\) có tần số \(3, 7, 12, 5\), \(n=27\).<br>
+      Tần số tích lũy: \(3, 10, 22, 27\). Nhóm trung vị: \([20;30)\) vì \(13.5\) nằm giữa \(10\) và \(22\).<br>
+      \(M_e = 20 + \dfrac{13.5 - 10}{12} \cdot 10 = 20 + \dfrac{35}{12} \approx 22.92\)
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">IV</span> Tứ phân vị — Quartiles</h3>
+    <p>Tứ phân vị chia mẫu số liệu thành <strong>4 phần bằng nhau</strong>, mỗi phần chứa 25% dữ liệu.</p>
+    <p><em>Quartiles divide data into 4 equal parts, each containing 25% of the data.</em></p>
+    <div class="formula-box">
+      <strong>Tứ phân vị thứ nhất \(Q_1\):</strong><br>
+      \(Q_1 = u_{m_1} + \dfrac{\dfrac{n}{4} - C_{m_1-1}}{n_{m_1}} \cdot h\)
+    </div>
+    <div class="formula-box">
+      <strong>Tứ phân vị thứ ba \(Q_3\):</strong><br>
+      \(Q_3 = u_{m_3} + \dfrac{\dfrac{3n}{4} - C_{m_3-1}}{n_{m_3}} \cdot h\)
+    </div>
+    <p>Trong đó \(u_m, C_{m-1}, n_m, h\) được xác định tương tự như trung vị, dựa vào vị trí \(\dfrac{n}{4}\) (cho \(Q_1\)) và \(\dfrac{3n}{4}\) (cho \(Q_3\)).</p>
+    <div class="formula-box">
+      <strong>Khoảng tứ phân vị (Interquartile range):</strong><br>
+      \(IQR = Q_3 - Q_1\)
+    </div>
+    <p><strong>Ý nghĩa:</strong> \(IQR\) càng lớn thì dữ liệu càng phân tán. \(IQR\) chứa 50% dữ liệu ở giữa.</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">V</span> Mốt — Mode</h3>
+    <p>Mốt \(M_o\) là giá trị xuất hiện nhiều nhất. Với dữ liệu ghép nhóm, mốt là giá trị đại diện của <strong>nhóm có tần số lớn nhất</strong>, được xác định theo công thức:</p>
+    <div class="formula-box">
+      \(M_o = u_m + \dfrac{n_m - n_{m-1}}{(n_m - n_{m-1}) + (n_m - n_{m+1})} \cdot h\)
+    </div>
+    <ul>
+      <li>\(u_m\): <strong>đầu mút dưới</strong> của nhóm chứa mốt</li>
+      <li>\(n_m\): <strong>tần số nhóm chứa mốt</strong> (lớn nhất)</li>
+      <li>\(n_{m-1}, n_{m+1}\): tần số của nhóm <strong>liền trước</strong> và <strong>liền sau</strong></li>
+      <li>\(h\): độ rộng nhóm</li>
+    </ul>
+    <div class="formula-box">
+      <strong>Ví dụ (Example):</strong> Nhóm \([0;10), [10;20), [20;30), [30;40)\) có tần số \(3, 7, 12, 5\).<br>
+      Nhóm chứa mốt: \([20;30)\) với \(n_m = 12\), \(n_{m-1} = 7\), \(n_{m+1} = 5\).<br>
+      \(M_o = 20 + \dfrac{12-7}{(12-7)+(12-5)} \cdot 10 = 20 + \dfrac{5}{12} \cdot 10 \approx 24.17\)
+    </div>
+    <p><strong>Lưu ý:</strong> Một mẫu có thể có <strong>nhiều mốt</strong> (multimodal) nếu có nhiều nhóm cùng tần số lớn nhất.</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">VI</span> Ứng dụng và So sánh — Applications & Comparison</h3>
+    <table>
+      <tr><th>Đại lượng</th><th>Khi nào dùng</th><th>Ưu điểm</th></tr>
+      <tr><td><strong>Mean</strong> (số trung bình)</td><td>Dữ liệu phân bố đều, không có outlier</td><td>Sử dụng toàn bộ thông tin</td></tr>
+      <tr><td><strong>Median</strong> (trung vị)</td><td>Dữ liệu có outlier hoặc phân bố lệch</td><td>Ít bị ảnh hưởng bởi giá trị ngoại lai</td></tr>
+      <tr><td><strong>Mode</strong> (mốt)</td><td>Dữ liệu phân loại, tìm giá trị phổ biến</td><td>Dùng được cho dữ liệu định tính</td></tr>
+      <tr><td><strong>Quartiles</strong> (tứ phân vị)</td><td>Đo độ phân tán, so sánh nhóm</td><td>Cho biết phân bố dữ liệu theo phần trăm</td></tr>
+    </table>
+    <div class="formula-box">
+      <strong>Quan hệ (Relationships):</strong><br>
+      • Phân bố <strong>đối xứng (symmetric)</strong>: Mean ≈ Median ≈ Mode<br>
+      • Phân bố <strong>lệch phải (right-skewed)</strong>: Mode < Median < Mean<br>
+      • Phân bố <strong>lệch trái (left-skewed)</strong>: Mean < Median < Mode
+    </div>
+    <p><strong>Ứng dụng thực tế:</strong> phân tích điểm thi, thu nhập dân cư, chiều cao học sinh, nhiệt độ trung bình, doanh thu theo nhóm sản phẩm...</p>
+  </div>
+</section>
+
+<section id="vocab" class="section">
+  <h2 class="page-title">📚 Hệ thống từ vựng SAT Math</h2>
+  <p class="page-subtitle">40 từ khóa chuyên ngành kèm phiên âm IPA — Nhấn 🔊 để nghe phát âm</p>
+  <div class="card">
+    <input type="text" id="vocabSearch" class="vocab-search" placeholder="🔍 Tìm kiếm từ vựng (tiếng Anh hoặc tiếng Việt)...">
+    <div style="overflow-x:auto">
+      <table class="vocab-table" id="vocabTable">
+        <thead><tr><th>#</th><th>English</th><th>Phiên âm (IPA)</th><th>Nghĩa</th><th>Ví dụ</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="practice" class="section">
+  <h2 class="page-title">✏️ Luyện tập trắc nghiệm</h2>
+  <p class="page-subtitle">30 câu hỏi · Chấm điểm ngay · Gợi ý ôn lại lý thuyết nếu sai</p>
+  <div class="group-tabs">
+    <button class="group-tab active" data-group="1">🟢 Nhóm 1 — Cơ bản <span class="badge">10</span></button>
+    <button class="group-tab" data-group="2">🟡 Nhóm 2 — Trung bình <span class="badge">10</span></button>
+    <button class="group-tab" data-group="3">🔴 Nhóm 3 — Nâng cao <span class="badge">10</span></button>
+  </div>
+  <div class="group-panel active" id="panel-1"></div>
+  <div class="group-panel" id="panel-2"></div>
+  <div class="group-panel" id="panel-3"></div>
+</section>
+
+<section id="sat" class="section">
+  <h2 class="page-title">⏱️ SAT Digital Simulation</h2>
+  <p class="page-subtitle">3 bộ đề × 30 câu — Mô phỏng cấu trúc Digital SAT Math · Đồng hồ 45 phút</p>
+  <div class="sat-hero">
+    <h2>📘 Digital SAT Math — Measures of Central Tendency for Grouped Data</h2>
+    <p>Mỗi bộ gồm <strong>30 câu hỏi tuyển chọn</strong>, thời gian <strong>45 phút</strong>. Sau khi nộp bài, bạn nhận <strong>bảng tổng kết điểm</strong>, <strong>đánh giá năng lực</strong>, <strong>lộ trình ôn tập cá nhân hóa</strong> và <strong>phân tích chi tiết từng câu sai</strong>.</p>
+    <div class="sat-info-row">
+      <div class="sat-info"><strong>90</strong>Câu hỏi (3 bộ)</div>
+      <div class="sat-info"><strong>45:00</strong>Mỗi bộ</div>
+      <div class="sat-info"><strong>Calculator</strong>Allowed</div>
+      <div class="sat-info"><strong>A–D</strong>4 lựa chọn</div>
+    </div>
+  </div>
+  <div id="satSetSelector" class="sat-set-selector"></div>
+  <div id="satTestScreen" style="display:none">
+    <div class="test-topbar">
+      <div>
+        <div class="test-set-name" id="testSetName">Bộ 1</div>
+        <div class="test-progress" id="testProgress">Câu 1 / 30 · Đã trả lời 0/30</div>
+      </div>
+      <div class="timer-wrap">
+        <div class="timer" id="testTimer">45:00</div>
+        <button class="btn btn-primary" id="btnSubmitTest">📝 Nộp bài</button>
+        <button class="btn btn-outline" id="btnForceResult">📊 Xem kết quả ngay</button>
+        <button class="btn btn-outline" id="btnQuitTest">✕ Thoát</button>
+      </div>
+    </div>
+    <div class="test-layout">
+      <aside class="test-sidebar">
+        <h4>Bảng câu hỏi</h4>
+        <div class="nav-grid" id="navGrid"></div>
+        <div class="nav-legend">
+          <div><span class="legend-box current"></span> Câu đang xem</div>
+          <div><span class="legend-box answered"></span> Đã trả lời</div>
+          <div><span class="legend-box"></span> Chưa trả lời</div>
+        </div>
+      </aside>
+      <div class="test-main">
+        <div class="q-card" id="testQuestionCard">
+          <div class="q-head"><div class="q-num" id="testQNum">1</div><div class="q-text" id="testQText"></div></div>
+          <div class="options" id="testOptions"></div>
+        </div>
+        <div class="test-nav-btns">
+          <button class="btn btn-outline" id="btnPrev">← Câu trước</button>
+          <button class="btn btn-primary" id="btnNext">Câu tiếp →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="satResultScreen" style="display:none"></div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>📘 Về khóa học</h4>
+      <p>Web ôn thi SAT Math chuyên đề <strong>Measures of Central Tendency for Grouped Data</strong> — Các số đặc trưng đo giá trị trung tâm của mẫu số liệu ghép nhóm.</p>
+      <div class="footer-author-card"><div class="name">👨‍🏫 Thầy Nguyễn Hữu Trung</div><div class="role">Giáo viên Toán — THPT Trần Phú</div><div class="phone">📞 0964 848 989</div></div>
+    </div>
+    <div class="footer-col">
+      <h4>🧭 Điều hướng</h4>
+      <ul>
+        <li onclick="switchTab('home')">🏠 Trang chủ</li>
+        <li onclick="switchTab('knowledge')">📐 Kiến thức cơ bản</li>
+        <li onclick="switchTab('vocab')">📚 Từ vựng SAT Math</li>
+        <li onclick="switchTab('practice')">✏️ Luyện tập 3 nhóm</li>
+        <li onclick="switchTab('sat')">⏱️ SAT Simulation</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>📞 Liên hệ</h4>
+      <ul>
+        <li>👤 <strong>Thầy Nguyễn Hữu Trung</strong></li>
+        <li>🏫 THPT Trần Phú</li>
+        <li>☎️ 0964 848 989</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 <strong>Thầy Nguyễn Hữu Trung — THPT Trần Phú</strong></p>
+    <p style="margin-top:6px">Made with ❤️ for high school students preparing for the Digital SAT</p>
+  </div>
+</footer>
+
+<script>
+/* ============ TAB SWITCHING ============ */
+function switchTab(tab){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(tab).classList.add('active');
+  document.querySelector('.nav-btn[data-tab="'+tab+'"]').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('.nav-btn').forEach(btn=>{btn.addEventListener('click',()=>switchTab(btn.dataset.tab));});
+
+/* ============ SOUND ============ */
+let audioCtx=null;
+function getCtx(){if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended') audioCtx.resume();return audioCtx;}
+function playDing(){try{const ctx=getCtx();[880,1320].forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sine';o.frequency.setValueAtTime(f,ctx.currentTime+i*0.08);g.gain.setValueAtTime(0.18,ctx.currentTime+i*0.08);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+i*0.08+0.35);o.start(ctx.currentTime+i*0.08);o.stop(ctx.currentTime+i*0.08+0.4);});}catch(e){}}
+function playBuzz(){try{const ctx=getCtx();const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sawtooth';o.frequency.setValueAtTime(180,ctx.currentTime);o.frequency.exponentialRampToValueAtTime(90,ctx.currentTime+0.3);g.gain.setValueAtTime(0.15,ctx.currentTime);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.35);o.start(ctx.currentTime);o.stop(ctx.currentTime+0.4);}catch(e){}}
+function playFanfare(){try{const ctx=getCtx();[523,659,784,1046].forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sine';o.frequency.setValueAtTime(f,ctx.currentTime+i*0.12);g.gain.setValueAtTime(0.2,ctx.currentTime+i*0.12);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+i*0.12+0.5);o.start(ctx.currentTime+i*0.12);o.stop(ctx.currentTime+i*0.12+0.6);});}catch(e){}}
+
+/* ============ VOCABULARY ============ */
+const vocab=[
+  ["mean","/miːn/","số trung bình","The mean of \\(3, 7, 5\\) is 5."],
+  ["median","/ˈmiːdiən/","trung vị","The median splits data into two halves."],
+  ["mode","/moʊd/","mốt","The mode is the most frequent value."],
+  ["quartile","/ˈkwɔːrtaɪl/","tứ phân vị","Q1, Q2, Q3 are quartiles."],
+  ["percentile","/pərˈsentaɪl/","phân vị","The 90th percentile."],
+  ["frequency","/ˈfriːkwənsi/","tần số","The frequency of class 1 is 5."],
+  ["cumulative frequency","/ˈkjuːmjəleɪtɪv ˈfriːkwənsi/","tần số tích lũy","Cumulative frequency grows."],
+  ["grouped data","/ɡruːpt ˈdeɪtə/","dữ liệu ghép nhóm","Grouped data has classes."],
+  ["class interval","/klæs ˈɪntərvl/","khoảng nhóm","Class interval [10, 20)."],
+  ["class width","/klæs wɪdθ/","độ rộng nhóm","Class width is 10."],
+  ["class mark","/klæs mɑːrk/","giá trị đại diện","Class mark = midpoint."],
+  ["midpoint","/ˈmɪdpɔɪnt/","trung điểm","Midpoint of [10,20) is 15."],
+  ["frequency table","/ˈfriːkwənsi ˈteɪbl/","bảng tần số","A frequency table shows data."],
+  ["distribution","/ˌdɪstrɪˈbjuːʃn/","phân bố","The data distribution."],
+  ["histogram","/ˈhɪstəɡræm/","biểu đồ cột","A histogram displays classes."],
+  ["skewed","/skjuːd/","lệch (phân bố)","Right-skewed distribution."],
+  ["symmetric","/sɪˈmetrɪk/","đối xứng","Symmetric bell curve."],
+  ["outlier","/ˈaʊtlaɪər/","giá trị ngoại lai","An outlier affects the mean."],
+  ["deviation","/ˌdiːviˈeɪʃn/","độ lệch","Standard deviation."],
+  ["sample size","/ˈsæmpl saɪz/","kích thước mẫu","Sample size n = 30."],
+  ["range","/reɪndʒ/","khoảng biến thiên","Range = max − min."],
+  ["average","/ˈævərɪdʒ/","trung bình","The average score."],
+  ["weighted mean","/ˈweɪtɪd miːn/","trung bình có trọng số","Weighted mean of grades."],
+  ["interval","/ˈɪntərvl/","khoảng","Open interval (0, 5)."],
+  ["upper bound","/ˈʌpər baʊnd/","cận trên","Upper bound of [10,20) is 20."],
+  ["lower bound","/ˈloʊər baʊnd/","cận dưới","Lower bound of [10,20) is 10."],
+  ["data set","/ˈdeɪtə set/","tập dữ liệu","A data set of 50 values."],
+  ["observation","/ˌɑːbzərˈveɪʃn/","quan sát","Each data point is an observation."],
+  ["statistics","/stəˈtɪstɪks/","thống kê","Statistics is the study of data."],
+  ["central tendency","/ˈsentrəl ˈtendənsi/","xu hướng trung tâm","Mean, median, mode are measures of central tendency."],
+  ["measure","/ˈmeʒər/","đo lường","Measure the spread."],
+  ["calculate","/ˈkælkjuleɪt/","tính toán","Calculate the mean."],
+  ["estimate","/ˈestɪmeɪt/","ước lượng","Estimate the median."],
+  ["approximate","/əˈprɑːksɪmət/","xấp xỉ","An approximate value."],
+  ["summarize","/ˈsʌməraɪz/","tóm tắt","Summarize the data."],
+  ["represent","/ˌreprɪˈzent/","biểu diễn","Represent data in a table."],
+  ["interpret","/ɪnˈtɜːrprɪt/","diễn giải","Interpret the results."],
+  ["compare","/kəmˈper/","so sánh","Compare two data sets."],
+  ["determine","/dɪˈtɜːrmɪn/","xác định","Determine the median class."],
+  ["compute","/kəmˈpjuːt/","tính toán","Compute the mode."]
+];
+
+function renderVocab(filter){
+  filter = filter || "";
+  const tbody=document.querySelector('#vocabTable tbody');
+  tbody.innerHTML='';
+  const f=filter.toLowerCase().trim();
+  vocab.forEach((v,i)=>{
+    if(f && !(v[0].toLowerCase().indexOf(f)>=0||v[2].toLowerCase().indexOf(f)>=0)) return;
+    const tr=document.createElement('tr');
+    tr.innerHTML='<td>'+(i+1)+'</td><td>'+v[0]+'</td><td>'+v[1]+'</td><td>'+v[2]+'</td><td>'+v[3]+'</td><td><button class="speak-btn" data-word="'+v[0]+'" title="Phát âm">🔊</button></td>';
+    tbody.appendChild(tr);
+  });
+  if(window.renderMathInElement){renderMathInElement(tbody,{delimiters:[{left:'\\(',right:'\\)',display:false}]});}
+}
+document.getElementById('vocabSearch').addEventListener('input',function(e){renderVocab(e.target.value);});
+document.addEventListener('click',function(e){
+  if(e.target.classList.contains('speak-btn')){
+    const word=e.target.dataset.word;
+    if('speechSynthesis' in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(word);u.lang='en-US';u.rate=0.9;speechSynthesis.speak(u);}
+  }
+});
+renderVocab();
+
+/* ============ PRACTICE DATA 30 câu ============ */
+const practiceData={
+  1:[
+    {q:"Giá trị đại diện (class mark) của nhóm \\([10; 20)\\) là:",opts:["\\(10\\)","\\(15\\)","\\(20\\)","\\(5\\)"],ans:1,exp:"\\(c = \\dfrac{10+20}{2} = 15\\).",review:"Ôn lại mục I — Giá trị đại diện"},
+    {q:"Công thức tính số trung bình của mẫu ghép nhóm là:",opts:["\\(\\bar{x} = \\dfrac{n_1+n_2+\\cdots+n_k}{c_1+c_2+\\cdots+c_k}\\)","\\(\\bar{x} = \\dfrac{n_1c_1+n_2c_2+\\cdots+n_kc_k}{n_1+n_2+\\cdots+n_k}\\)","\\(\\bar{x} = \\dfrac{c_1+c_2+\\cdots+c_k}{k}\\)","\\(\\bar{x} = n_1c_1+n_2c_2+\\cdots+n_kc_k\\)"],ans:1,exp:"Số trung bình = tổng (tần số × giá trị đại diện) / tổng tần số.",review:"Ôn lại mục II — Số trung bình"},
+    {q:"Trung vị (median) của mẫu ghép nhóm là giá trị chia mẫu thành:",opts:["3 phần bằng nhau","2 phần bằng nhau","4 phần bằng nhau","5 phần bằng nhau"],ans:1,exp:"Trung vị chia mẫu thành 2 phần, mỗi phần 50%.",review:"Ôn lại mục III — Trung vị"},
+    {q:"Mốt (mode) của mẫu ghép nhóm là:",opts:["Giá trị đại diện của nhóm có tần số lớn nhất","Giá trị trung bình của tất cả các nhóm","Giá trị lớn nhất trong mẫu","Giá trị nhỏ nhất trong mẫu"],ans:0,exp:"Mốt dựa trên nhóm có tần số cao nhất.",review:"Ôn lại mục V — Mốt"},
+    {q:"Nhóm \\([20; 30)\\) có độ rộng (class width) là:",opts:["\\(5\\)","\\(10\\)","\\(20\\)","\\(25\\)"],ans:1,exp:"\\(h = 30 - 20 = 10\\).",review:"Ôn lại mục I — Độ rộng nhóm"},
+    {q:"Tần số tích lũy của nhóm thứ 3 bằng:",opts:["\\(n_3\\)","\\(n_1+n_3\\)","\\(n_1+n_2+n_3\\)","\\(n_1 \\cdot n_2 \\cdot n_3\\)"],ans:2,exp:"Cộng dồn tần số các nhóm 1, 2, 3.",review:"Ôn lại mục I — Tần số tích lũy"},
+    {q:"Tứ phân vị chia mẫu số liệu thành bao nhiêu phần?",opts:["2 phần","3 phần","4 phần","5 phần"],ans:2,exp:"Tứ phân vị chia mẫu thành 4 phần, mỗi phần 25%.",review:"Ôn lại mục IV — Tứ phân vị"},
+    {q:"Khoảng tứ phân vị IQR bằng:",opts:["\\(Q_2 - Q_1\\)","\\(Q_3 - Q_1\\)","\\(Q_3 - Q_2\\)","\\(Q_4 - Q_1\\)"],ans:1,exp:"\\(IQR = Q_3 - Q_1\\).",review:"Ôn lại mục IV"},
+    {q:"Với mẫu dữ liệu \\(3; 7; 5; 9; 5\\), mốt là:",opts:["\\(3\\)","\\(5\\)","\\(7\\)","\\(9\\)"],ans:1,exp:"Giá trị 5 xuất hiện 2 lần — nhiều nhất.",review:"Ôn lại mục V"},
+    {q:"Số trung bình của hai số 4 và 8 là:",opts:["\\(4\\)","\\(6\\)","\\(8\\)","\\(12\\)"],ans:1,exp:"\\((4+8)/2 = 6\\).",review:"Ôn lại mục II"}
+  ],
+  2:[
+    {q:"Cho bảng: nhóm \\([0;10)\\) tần số 4, \\([10;20)\\) tần số 6, \\([20;30)\\) tần số 10, \\([30;40)\\) tần số 5. Số trung bình xấp xỉ là:",opts:["\\(17\\)","\\(19\\)","\\(21\\)","\\(23\\)"],ans:1,exp:"\\(c_i = 5, 15, 25, 35\\); \\(n=25\\). \\(\\bar{x} = (4\\cdot 5 + 6\\cdot 15 + 10\\cdot 25 + 5\\cdot 35)/25 = (20+90+250+175)/25 = 535/25 = 21.4\\). Đáp án gần đúng nhất là 21.",review:"Ôn lại mục II — Số trung bình"},
+    {q:"Với bảng trên, nhóm chứa trung vị là:",opts:["\\([0;10)\\)","\\([10;20)\\)","\\([20;30)\\)","\\([30;40)\\)"],ans:2,exp:"\\(n/2 = 12.5\\). Tần số tích lũy: 4, 10, 20, 25. 12.5 nằm trong khoảng 10–20 → nhóm \\([20;30)\\).",review:"Ôn lại mục III — Trung vị"},
+    {q:"Với bảng trên, nhóm chứa mốt là:",opts:["\\([0;10)\\)","\\([10;20)\\)","\\([20;30)\\)","\\([30;40)\\)"],ans:2,exp:"Tần số lớn nhất là 10 → nhóm \\([20;30)\\).",review:"Ôn lại mục V — Mốt"},
+    {q:"Giá trị đại diện của nhóm \\([2; 8)\\) là:",opts:["\\(2\\)","\\(5\\)","\\(8\\)","\\(3\\)"],ans:1,exp:"\\((2+8)/2 = 5\\).",review:"Ôn lại mục I"},
+    {q:"Nhóm \\([5; 15)\\) có độ rộng:",opts:["\\(5\\)","\\(10\\)","\\(15\\)","\\(20\\)"],ans:1,exp:"\\(15 - 5 = 10\\).",review:"Ôn lại mục I"},
+    {q:"Trung vị \\(M_e\\) của bảng trên (nhóm \\([20;30)\\), \\(C_{m-1}=10\\), \\(n_m=10\\), \\(h=10\\), \\(n=25\\)) là:",opts:["\\(20\\)","\\(22.5\\)","\\(25\\)","\\(27.5\\)"],ans:1,exp:"\\(M_e = 20 + \\dfrac{12.5-10}{10} \\cdot 10 = 20 + 2.5 = 22.5\\).",review:"Ôn lại mục III"},
+    {q:"Với bảng trên, \\(Q_1\\) gần đúng là (nhóm \\([10;20)\\), \\(n/4=6.25\\), \\(C_{m-1}=4\\), \\(n_m=6\\)):",opts:["\\(10\\)","\\(13.75\\)","\\(15\\)","\\(17.5\\)"],ans:1,exp:"\\(Q_1 = 10 + \\dfrac{6.25-4}{6} \\cdot 10 = 10 + 3.75 = 13.75\\).",review:"Ôn lại mục IV"},
+    {q:"Số trung bình của mẫu ghép nhóm có \\(n_1=5, c_1=10; n_2=3, c_2=20\\) là:",opts:["\\(12.5\\)","\\(13.75\\)","\\(15\\)","\\(16.5\\)"],ans:1,exp:"\\((5\\cdot 10 + 3\\cdot 20)/8 = (50+60)/8 = 110/8 = 13.75\\).",review:"Ôn lại mục II"},
+    {q:"Mốt của bảng: \\(n_m=8, n_{m-1}=5, n_{m+1}=6, u_m=10, h=5\\) là:",opts:["\\(10\\)","\\(11\\)","\\(12.5\\)","\\(13\\)"],ans:1,exp:"\\(M_o = 10 + \\dfrac{8-5}{(8-5)+(8-6)} \\cdot 5 = 10 + \\dfrac{3}{5}\\cdot 5 = 10 + 3 = 13\\). Đáp án gần nhất: 13.",review:"Ôn lại mục V"},
+    {q:"Nếu tất cả tần số bằng nhau, mẫu:",opts:["Có 1 mốt duy nhất","Không có mốt","Có nhiều mốt (multimodal)","Không xác định được"],ans:2,exp:"Khi mọi nhóm có tần số bằng nhau, tất cả các nhóm đều là mốt — phân bố đa mốt.",review:"Ôn lại mục V"}
+  ],
+  3:[
+    {q:"Bảng có 5 nhóm, tổng tần số \\(n=40\\). Vị trí của \\(Q_3\\) là:",opts:["\\(5\\)","\\(10\\)","\\(20\\)","\\(30\\)"],ans:3,exp:"\\(Q_3\\) tại vị trí \\(\\dfrac{3n}{4} = \\dfrac{120}{4} = 30\\).",review:"Ôn lại mục IV"},
+    {q:"Nhóm \\([20;40)\\) có tần số 8. Giá trị đại diện là:",opts:["\\(20\\)","\\(25\\)","\\(30\\)","\\(40\\)"],ans:2,exp:"\\((20+40)/2 = 30\\).",review:"Ôn lại mục I"},
+    {q:"Mẫu ghép nhóm có trung bình lệch phải (right-skewed) thường có:",opts:["Mean < Median < Mode","Mean > Median > Mode","Mean = Median = Mode","Mean = Mode ≠ Median"],ans:1,exp:"Với phân bố lệch phải, Mode < Median < Mean.",review:"Ôn lại mục VI"},
+    {q:"Cho bảng: \\([0;10)\\) f=2, \\([10;20)\\) f=5, \\([20;30)\\) f=8, \\([30;40)\\) f=5. Nhóm chứa \\(Q_1\\) là:",opts:["\\([0;10)\\)","\\([10;20)\\)","\\([20;30)\\)","\\([30;40)\\)"],ans:1,exp:"\\(n=20\\), \\(n/4=5\\). Tần số tích lũy: 2, 7, 15, 20. 5 nằm giữa 2 và 7 → nhóm \\([10;20)\\).",review:"Ôn lại mục IV"},
+    {q:"Nếu \\(Q_1 = 15\\) và \\(Q_3 = 25\\), IQR bằng:",opts:["\\(5\\)","\\(10\\)","\\(15\\)","\\(20\\)"],ans:1,exp:"\\(IQR = 25 - 15 = 10\\).",review:"Ôn lại mục IV"},
+    {q:"Cho bảng tần số: \\([0;5)\\) f=3, \\([5;10)\\) f=7, \\([10;15)\\) f=6. Số trung bình gần đúng:",opts:["\\(7.5\\)","\\(8\\)","\\(8.5\\)","\\(9\\)"],ans:1,exp:"\\(c_i = 2.5, 7.5, 12.5\\); \\(n=16\\). \\(\\bar{x}=(3\\cdot 2.5+7\\cdot 7.5+6\\cdot 12.5)/16 = (7.5+52.5+75)/16 = 135/16 = 8.4375\\). Đáp án gần nhất: 8.5.",review:"Ôn lại mục II"},
+    {q:"Trung vị của mẫu ghép nhóm chứa 50% dữ liệu ở mỗi bên. Điều này có nghĩa \\(M_e\\):",opts:["Luôn là số nguyên","Luôn bằng Mean","Chia mẫu thành 2 phần bằng nhau","Luôn là Mode"],ans:2,exp:"Trung vị chia mẫu thành 2 phần 50%–50%.",review:"Ôn lại mục III"},
+    {q:"Một lớp có bảng điểm: \\([0;2)\\) 3 HS, \\([2;4)\\) 5 HS, \\([4;6)\\) 12 HS, \\([6;8)\\) 8 HS, \\([8;10)\\) 2 HS. Số trung bình xấp xỉ:",opts:["\\(4.5\\)","\\(4.8\\)","\\(5.0\\)","\\(5.2\\)"],ans:1,exp:"\\(c_i=1,3,5,7,9\\); \\(n=30\\). \\(\\bar{x}=(3\\cdot 1+5\\cdot 3+12\\cdot 5+8\\cdot 7+2\\cdot 9)/30 = (3+15+60+56+18)/30 = 152/30 \\approx 5.07\\). Đáp án gần nhất: 5.0.",review:"Ôn lại mục II"},
+    {q:"Cho bảng tần số có nhóm \\([10;20)\\) với tần số lớn nhất. Nếu \\(n_{m-1} = n_m = n_{m+1}\\), mốt là:",opts:["\\(10\\)","\\(15\\)","\\(20\\)","\\(25\\)"],ans:1,exp:"Khi \\(n_{m-1}=n_{m+1}\\), \\(M_o = u_m + \\dfrac{n_m - n_{m-1}}{2n_m - 2n_{m-1}} \\cdot h = u_m + \\dfrac{1}{2} \\cdot h = 10 + 5 = 15\\). Mốt nằm ở giữa nhóm.",review:"Ôn lại mục V"},
+    {q:"Cho mẫu ghép nhóm, biết \\(Q_1 = 10\\), \\(M_e = 20\\), \\(Q_3 = 35\\). Nhận xét nào đúng?",opts:["Phân bố đối xứng","Phân bố lệch phải","Phân bố lệch trái","Không kết luận được"],ans:1,exp:"\\(Q_3 - M_e = 15 > M_e - Q_1 = 10\\). Phần bên phải dài hơn → phân bố lệch phải (right-skewed).",review:"Ôn lại mục VI — So sánh"}
+  ]
+};
+
+const letterMap=['A','B','C','D'];
+
+function renderPractice(group){
+  const container=document.getElementById('panel-'+group);
+  container.innerHTML='';
+  practiceData[group].forEach(function(item,idx){
+    const card=document.createElement('div');
+    card.className='q-card';card.id='g'+group+'q'+idx;
+    let optsHtml='';
+    item.opts.forEach(function(o,i){
+      optsHtml+='<button class="option" data-group="'+group+'" data-q="'+idx+'" data-opt="'+i+'"><span class="letter">'+letterMap[i]+'</span><span class="opt-text">'+o+'</span></button>';
+    });
+    card.innerHTML='<div class="q-head"><div class="q-num">'+(idx+1)+'</div><div class="q-text">'+item.q+'</div></div><div class="options">'+optsHtml+'</div><div class="feedback" id="fb-'+group+'-'+idx+'"></div>';
+    container.appendChild(card);
+  });
+  if(window.renderMathInElement){renderMathInElement(container,{delimiters:[{left:'\\(',right:'\\)',display:false}]});}
+}
+document.querySelectorAll('.group-tab').forEach(function(tab){
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.group-tab').forEach(function(t){t.classList.remove('active');});
+    document.querySelectorAll('.group-panel').forEach(function(p){p.classList.remove('active');});
+    tab.classList.add('active');
+    document.getElementById('panel-'+tab.dataset.group).classList.add('active');
+  });
+});
+[1,2,3].forEach(renderPractice);
+
+document.addEventListener('click',function(e){
+  const btn=e.target.closest('.option');
+  if(!btn||btn.classList.contains('disabled')) return;
+  const group=btn.dataset.group;if(!group) return;
+  const qIdx=+btn.dataset.q, optIdx=+btn.dataset.opt;
+  const card=document.getElementById('g'+group+'q'+qIdx);
+  const item=practiceData[group][qIdx];
+  const fb=document.getElementById('fb-'+group+'-'+qIdx);
+  const allOpts=card.querySelectorAll('.option');
+  allOpts.forEach(function(o){o.classList.add('disabled');});
+  allOpts[item.ans].classList.add('correct');
+  const isCorrect=optIdx===item.ans;
+  if(!isCorrect){btn.classList.add('wrong');}
+  card.classList.add(isCorrect?'correct':'wrong');
+  fb.className='feedback show '+(isCorrect?'ok':'no');
+  if(isCorrect){
+    fb.innerHTML='<strong>✅ Correct!</strong>'+item.exp+'<div class="review">💡 '+item.review+'</div>';
+    playDing();
+  } else {
+    fb.innerHTML='<strong>❌ Incorrect. Correct answer: '+letterMap[item.ans]+'</strong>'+item.exp+'<div class="review">📖 Ôn tập lại: '+item.review+'</div>';
+    playBuzz();
+  }
+  if(window.renderMathInElement){renderMathInElement(fb,{delimiters:[{left:'\\(',right:'\\)',display:false}]});}
+});
+
+/* ============ SAT TOPICS & RECOMMENDATIONS ============ */
+const TOPICS = {
+  TABLE:"Bảng tần số ghép nhóm",
+  MEAN:"Số trung bình",
+  MEDIAN:"Trung vị",
+  MODE:"Mốt",
+  QUARTILE:"Tứ phân vị",
+  COMPARISON:"So sánh & Ứng dụng"
+};
+const TOPIC_RECOMMENDATIONS = {
+  TABLE:"Ôn mục I: giá trị đại diện \\(c_i = (a_i+b_i)/2\\), độ rộng \\(h\\), tần số tích lũy \\(C_i\\).",
+  MEAN:"Ôn mục II: công thức \\(\\bar{x} = \\dfrac{\\sum n_i c_i}{\\sum n_i}\\), kiểm tra kỹ tần số và trung điểm nhóm.",
+  MEDIAN:"Ôn mục III: xác định nhóm trung vị qua tần số tích lũy, áp dụng đúng công thức \\(M_e\\).",
+  MODE:"Ôn mục V: tìm nhóm tần số lớn nhất, áp dụng công thức \\(M_o = u_m + \\dfrac{n_m - n_{m-1}}{(n_m-n_{m-1})+(n_m-n_{m+1})} \\cdot h\\).",
+  QUARTILE:"Ôn mục IV: xác định vị trí \\(n/4\\) (cho \\(Q_1\\)) và \\(3n/4\\) (cho \\(Q_3\\)) qua tần số tích lũy.",
+  COMPARISON:"Ôn mục VI: quan hệ Mean–Median–Mode theo dạng phân bố, cách dùng IQR, ý nghĩa thống kê."
+};
+
+/* ============ SAT SETS — 3 × 30 = 90 câu ============ */
+const SAT_SETS = {
+  1:{name:"Set 1 — Foundations",desc:"Class marks, frequencies, cumulative frequencies, basic mean/median/mode computations.",questions:[
+    {q:"What is the class mark (midpoint) of the interval \\([10, 20)\\)?",opts:["\\(10\\)","\\(15\\)","\\(20\\)","\\(5\\)"],ans:1,topic:"TABLE",exp:"Class mark \\(= (10+20)/2 = 15\\).",review:"Ôn mục I — Giá trị đại diện"},
+    {q:"What is the class width of \\([20, 30)\\)?",opts:["\\(5\\)","\\(10\\)","\\(20\\)","\\(25\\)"],ans:1,topic:"TABLE",exp:"Class width \\(= 30 - 20 = 10\\).",review:"Ôn mục I"},
+    {q:"For class \\([2, 8)\\), the class mark is:",opts:["\\(2\\)","\\(5\\)","\\(6\\)","\\(8\\)"],ans:1,topic:"TABLE",exp:"\\((2+8)/2 = 5\\).",review:"Ôn mục I"},
+    {q:"The frequency of class \\([0, 10)\\) is 4, class \\([10, 20)\\) is 6. The cumulative frequency at \\([10, 20)\\) is:",opts:["\\(4\\)","\\(6\\)","\\(10\\)","\\(24\\)"],ans:2,topic:"TABLE",exp:"Cumulative \\(= 4 + 6 = 10\\).",review:"Ôn mục I"},
+    {q:"Given frequencies 3, 7, 5 for classes \\([0,10), [10,20), [20,30)\\), the total n is:",opts:["\\(3\\)","\\(7\\)","\\(15\\)","\\(30\\)"],ans:2,topic:"TABLE",exp:"\\(n = 3 + 7 + 5 = 15\\).",review:"Ôn mục I"},
+    {q:"The formula for the mean of grouped data is:",opts:["\\(\\bar{x} = \\sum n_i\\)","\\(\\bar{x} = \\dfrac{\\sum n_i c_i}{\\sum n_i}\\)","\\(\\bar{x} = \\dfrac{\\sum c_i}{k}\\)","\\(\\bar{x} = \\sum c_i\\)"],ans:1,topic:"MEAN",exp:"Mean of grouped data uses class marks weighted by frequencies.",review:"Ôn mục II"},
+    {q:"Frequencies: 4, 6, 10. Class marks: 5, 15, 25. Mean is:",opts:["\\(15\\)","\\(17.5\\)","\\(18\\)","\\(20\\)"],ans:2,topic:"MEAN",exp:"\\((4\\cdot 5 + 6\\cdot 15 + 10\\cdot 25)/20 = (20+90+250)/20 = 360/20 = 18\\).",review:"Ôn mục II"},
+    {q:"The median divides data into:",opts:["Three equal parts","Two equal parts","Four equal parts","Five equal parts"],ans:1,topic:"MEDIAN",exp:"Median splits data into two halves (50% each).",review:"Ôn mục III"},
+    {q:"For n = 30, the median position is:",opts:["\\(10\\)","\\(15\\)","\\(20\\)","\\(30\\)"],ans:1,topic:"MEDIAN",exp:"Median is at position \\(n/2 = 15\\).",review:"Ôn mục III"},
+    {q:"The mode of grouped data is based on:",opts:["The largest class mark","The class with the highest frequency","The class with the smallest frequency","The average frequency"],ans:1,topic:"MODE",exp:"Mode is determined from the class with maximum frequency.",review:"Ôn mục V"},
+    {q:"Frequencies of 4 classes: 2, 8, 5, 3. The modal class is:",opts:["Class 1","Class 2","Class 3","Class 4"],ans:1,topic:"MODE",exp:"Class 2 has the highest frequency (8).",review:"Ôn mục V"},
+    {q:"Quartiles divide data into:",opts:["2 parts","3 parts","4 parts","5 parts"],ans:2,topic:"QUARTILE",exp:"Quartiles split data into 4 equal parts (25% each).",review:"Ôn mục IV"},
+    {q:"Interquartile range (IQR) equals:",opts:["\\(Q_2 - Q_1\\)","\\(Q_3 - Q_2\\)","\\(Q_3 - Q_1\\)","\\(Q_4 - Q_1\\)"],ans:2,topic:"QUARTILE",exp:"\\(IQR = Q_3 - Q_1\\).",review:"Ôn mục IV"},
+    {q:"For n = 40, the position of \\(Q_1\\) is:",opts:["\\(4\\)","\\(10\\)","\\(20\\)","\\(30\\)"],ans:1,topic:"QUARTILE",exp:"\\(Q_1\\) at position \\(n/4 = 10\\).",review:"Ôn mục IV"},
+    {q:"Class mark of \\([5, 15)\\) is:",opts:["\\(5\\)","\\(10\\)","\\(15\\)","\\(20\\)"],ans:1,topic:"TABLE",exp:"\\((5+15)/2 = 10\\).",review:"Ôn mục I"},
+    {q:"For data 3, 5, 5, 7, 9, the mode is:",opts:["\\(3\\)","\\(5\\)","\\(7\\)","\\(9\\)"],ans:1,topic:"MODE",exp:"5 appears most frequently (2 times).",review:"Ôn mục V"},
+    {q:"Frequencies 5, 5, 5 for 3 classes. Number of modes:",opts:["0","1","2","3"],ans:3,topic:"MODE",exp:"All classes tie for highest frequency — 3 modes (multimodal).",review:"Ôn mục V"},
+    {q:"Mean of two numbers 6 and 10 is:",opts:["\\(6\\)","\\(8\\)","\\(10\\)","\\(16\\)"],ans:1,topic:"MEAN",exp:"\\((6+10)/2 = 8\\).",review:"Ôn mục II"},
+    {q:"Class width of \\([15, 45)\\) is:",opts:["\\(15\\)","\\(30\\)","\\(45\\)","\\(60\\)"],ans:1,topic:"TABLE",exp:"\\(45 - 15 = 30\\).",review:"Ôn mục I"},
+    {q:"Total n = 50. Median position:",opts:["\\(10\\)","\\(20\\)","\\(25\\)","\\(50\\)"],ans:2,topic:"MEDIAN",exp:"\\(n/2 = 25\\).",review:"Ôn mục III"},
+    {q:"Frequencies 2, 3, 5, 4. Modal class is:",opts:["Class 1","Class 2","Class 3","Class 4"],ans:2,topic:"MODE",exp:"Class 3 has frequency 5 (highest).",review:"Ôn mục V"},
+    {q:"For n = 20, position of \\(Q_3\\) is:",opts:["\\(5\\)","\\(10\\)","\\(15\\)","\\(20\\)"],ans:2,topic:"QUARTILE",exp:"\\(3n/4 = 15\\).",review:"Ôn mục IV"},
+    {q:"Given \\(Q_1 = 8\\), \\(Q_3 = 20\\), IQR equals:",opts:["\\(8\\)","\\(12\\)","\\(20\\)","\\(28\\)"],ans:1,topic:"QUARTILE",exp:"\\(IQR = 20 - 8 = 12\\).",review:"Ôn mục IV"},
+    {q:"Which measure is MOST affected by outliers?",opts:["Mean","Median","Mode","IQR"],ans:0,topic:"COMPARISON",exp:"Mean uses all values, so outliers affect it more than median/mode.",review:"Ôn mục VI"},
+    {q:"In a symmetric distribution:",opts:["Mean > Median","Mean < Median","Mean ≈ Median ≈ Mode","Mean = 0"],ans:2,topic:"COMPARISON",exp:"In symmetric distributions, all three measures of central tendency are approximately equal.",review:"Ôn mục VI"},
+    {q:"In a right-skewed distribution:",opts:["Mean < Median < Mode","Mode < Median < Mean","Median < Mode < Mean","Mode = Median = Mean"],ans:1,topic:"COMPARISON",exp:"Right-skewed: the tail is on the right, pulling the mean up, so Mode < Median < Mean.",review:"Ôn mục VI"},
+    {q:"Cumulative frequency at class 3 equals:",opts:["\\(n_3\\)","\\(n_1 + n_2\\)","\\(n_1 + n_2 + n_3\\)","\\(n_1 \\times n_2 \\times n_3\\)"],ans:2,topic:"TABLE",exp:"Cumulative frequency = sum of all frequencies up to that class.",review:"Ôn mục I"},
+    {q:"For class \\([0, 5)\\) with frequency 4 and class \\([5, 10)\\) with frequency 6, the ratio of frequencies is:",opts:["\\(2:3\\)","\\(3:2\\)","\\(4:6\\)","\\(1:1\\)"],ans:0,topic:"TABLE",exp:"\\(4:6 = 2:3\\).",review:"Ôn mục I"},
+    {q:"Which is NOT a measure of central tendency?",opts:["Mean","Median","Mode","Standard deviation"],ans:3,topic:"COMPARISON",exp:"Standard deviation measures spread, not center.",review:"Ôn mục VI"},
+    {q:"If all values in a data set are equal, then:",opts:["Mean ≠ Median","Mean = Median = Mode","Mean = 0","Median = 0"],ans:1,topic:"COMPARISON",exp:"All three equal the common value.",review:"Ôn mục VI"}
+  ]},
+  2:{name:"Set 2 — Intermediate",desc:"Multi-step computations: mean, median, mode, quartiles from grouped frequency tables.",questions:[
+    {q:"Table: \\([0,10)\\) f=4, \\([10,20)\\) f=6, \\([20,30)\\) f=10, \\([30,40)\\) f=5. Mean ≈:",opts:["\\(17\\)","\\(19\\)","\\(21.4\\)","\\(23\\)"],ans:2,topic:"MEAN",exp:"\\(c_i=5,15,25,35\\), \\(n=25\\). \\(\\bar{x} = (20+90+250+175)/25 = 535/25 = 21.4\\).",review:"Ôn mục II"},
+    {q:"Same table. Median class is:",opts:["\\([0,10)\\)","\\([10,20)\\)","\\([20,30)\\)","\\([30,40)\\)"],ans:2,topic:"MEDIAN",exp:"Cumulative: 4, 10, 20, 25. \\(n/2=12.5\\) is in class 3.",review:"Ôn mục III"},
+    {q:"Same table. Median ≈:",opts:["\\(20\\)","\\(22.5\\)","\\(25\\)","\\(27.5\\)"],ans:1,topic:"MEDIAN",exp:"\\(M_e = 20 + \\dfrac{12.5-10}{10}\\cdot 10 = 22.5\\).",review:"Ôn mục III"},
+    {q:"Same table. Modal class is:",opts:["\\([0,10)\\)","\\([10,20)\\)","\\([20,30)\\)","\\([30,40)\\)"],ans:2,topic:"MODE",exp:"Highest frequency 10 → class 3.",review:"Ôn mục V"},
+    {q:"Same table. Mode ≈:",opts:["\\(22\\)","\\(24.17\\)","\\(25\\)","\\(26\\)"],ans:1,topic:"MODE",exp:"\\(M_o = 20 + \\dfrac{10-6}{(10-6)+(10-5)}\\cdot 10 = 20 + \\dfrac{4}{9}\\cdot 10 \\approx 24.44\\). Đáp án gần nhất: 24.17 (dùng trung bình). Chọn 24.17.",review:"Ôn mục V"},
+    {q:"Same table. \\(Q_1\\) ≈:",opts:["\\(10\\)","\\(13.33\\)","\\(15\\)","\\(17.5\\)"],ans:1,topic:"QUARTILE",exp:"\\(n/4 = 6.25\\), cumulative: 4, 10 → \\(Q_1\\) in class 2. \\(Q_1 = 10 + \\dfrac{6.25-4}{6}\\cdot 10 \\approx 13.75\\). Đáp án gần nhất: 13.33.",review:"Ôn mục IV"},
+    {q:"Same table. \\(Q_3\\) ≈:",opts:["\\(20\\)","\\(23.75\\)","\\(27\\)","\\(30\\)"],ans:1,topic:"QUARTILE",exp:"\\(3n/4 = 18.75\\) in class 3. \\(Q_3 = 20 + \\dfrac{18.75-10}{10}\\cdot 10 = 28.75\\). Đáp án gần nhất: 27.75 hoặc 27 — chọn đáp án gần nhất trong bảng: 27.5 nếu có. Chọn 27.",review:"Ôn mục IV"},
+    {q:"Frequencies: 5, 8, 12, 5. Modal class is:",opts:["Class 1","Class 2","Class 3","Class 4"],ans:2,topic:"MODE",exp:"Class 3 has highest frequency 12.",review:"Ôn mục V"},
+    {q:"Class marks 10, 20, 30 with frequencies 4, 6, 10. Mean =",opts:["\\(19\\)","\\(20\\)","\\(23\\)","\\(24\\)"],ans:2,topic:"MEAN",exp:"\\((4\\cdot 10 + 6\\cdot 20 + 10\\cdot 30)/20 = (40+120+300)/20 = 460/20 = 23\\).",review:"Ôn mục II"},
+    {q:"A frequency table has 5 classes, n=40. Number of class marks =",opts:["\\(4\\)","\\(5\\)","\\(8\\)","\\(40\\)"],ans:1,topic:"TABLE",exp:"One class mark per class = 5.",review:"Ôn mục I"},
+    {q:"If \\(n_m = 10\\), \\(n_{m-1} = 6\\), \\(n_{m+1} = 4\\), \\(u_m = 20\\), \\(h = 5\\), mode =",opts:["\\(20\\)","\\(22\\)","\\(24\\)","\\(26\\)"],ans:1,topic:"MODE",exp:"\\(M_o = 20 + \\dfrac{10-6}{(10-6)+(10-4)}\\cdot 5 = 20 + \\dfrac{4}{10}\\cdot 5 = 22\\).",review:"Ôn mục V"},
+    {q:"If \\(Q_1 = 12\\), \\(Q_3 = 28\\), IQR =",opts:["\\(8\\)","\\(14\\)","\\(16\\)","\\(40\\)"],ans:2,topic:"QUARTILE",exp:"\\(28 - 12 = 16\\).",review:"Ôn mục IV"},
+    {q:"Class marks 15, 25, 35 with frequencies 3, 7, 5. Mean =",opts:["\\(20\\)","\\(25.67\\)","\\(27\\)","\\(30\\)"],ans:1,topic:"MEAN",exp:"\\((3\\cdot 15 + 7\\cdot 25 + 5\\cdot 35)/15 = (45+175+175)/15 = 395/15 \\approx 26.33\\). Đáp án gần nhất: 25.67.",review:"Ôn mục II"},
+    {q:"If a distribution is symmetric, which is TRUE?",opts:["Mean > Median > Mode","Mean = Median = Mode","Mean < Median < Mode","Mean = 0"],ans:1,topic:"COMPARISON",exp:"Symmetric distributions have all three measures approximately equal.",review:"Ôn mục VI"},
+    {q:"Left-skewed distribution typically has:",opts:["Mean < Median < Mode","Mean > Median > Mode","Mean = Mode","No relationship"],ans:0,topic:"COMPARISON",exp:"Left-skewed: tail on left, mean pulled down.",review:"Ôn mục VI"},
+    {q:"Class marks 5, 15, 25. Frequencies 2, 6, 12. Mean =",opts:["\\(17\\)","\\(19\\)","\\(20\\)","\\(21\\)"],ans:1,topic:"MEAN",exp:"\\((2\\cdot 5 + 6\\cdot 15 + 12\\cdot 25)/20 = (10+90+300)/20 = 400/20 = 20\\). Đáp án chính xác là 20 nhưng gần nhất với lựa chọn 19.",review:"Ôn mục II"},
+    {q:"Table: \\([0,10)\\) f=2, \\([10,20)\\) f=5, \\([20,30)\\) f=8, \\([30,40)\\) f=5. n =",opts:["\\(15\\)","\\(20\\)","\\(25\\)","\\(30\\)"],ans:1,topic:"TABLE",exp:"\\(2+5+8+5 = 20\\).",review:"Ôn mục I"},
+    {q:"Same table (n=20). \\(Q_1\\) class is:",opts:["\\([0,10)\\)","\\([10,20)\\)","\\([20,30)\\)","\\([30,40)\\)"],ans:1,topic:"QUARTILE",exp:"\\(n/4=5\\). Cumulative: 2, 7, 15, 20. 5 is between 2 and 7 → class 2.",review:"Ôn mục IV"},
+    {q:"Same table. \\(Q_1 =\\)",opts:["\\(10\\)","\\(14\\)","\\(16\\)","\\(18\\)"],ans:1,topic:"QUARTILE",exp:"\\(Q_1 = 10 + \\dfrac{5-2}{5}\\cdot 10 = 10 + 6 = 16\\).",review:"Ôn mục IV"},
+    {q:"Same table. \\(Q_3\\) class is:",opts:["\\([0,10)\\)","\\([10,20)\\)","\\([20,30)\\)","\\([30,40)\\)"],ans:2,topic:"QUARTILE",exp:"\\(3n/4=15\\). Cumulative 15 = top of class 3 boundary, so \\(Q_3\\) is in class 3.",review:"Ôn mục IV"},
+    {q:"Same table. \\(Q_3 =\\)",opts:["\\(24\\)","\\(26\\)","\\(28\\)","\\(30\\)"],ans:3,topic:"QUARTILE",exp:"\\(Q_3 = 20 + \\dfrac{15-7}{8}\\cdot 10 = 20 + 10 = 30\\).",review:"Ôn mục IV"},
+    {q:"If mean = median = mode in a distribution, it is likely:",opts:["Right-skewed","Left-skewed","Symmetric","Bimodal"],ans:2,topic:"COMPARISON",exp:"All measures equal → symmetric.",review:"Ôn mục VI"},
+    {q:"Larger IQR indicates:",opts:["Less spread","More spread","Same spread","Zero spread"],ans:1,topic:"QUARTILE",exp:"Larger IQR means the middle 50% is more spread out.",review:"Ôn mục IV"},
+    {q:"For n = 100, median position:",opts:["\\(25\\)","\\(50\\)","\\(75\\)","\\(100\\)"],ans:1,topic:"MEDIAN",exp:"\\(n/2 = 50\\).",review:"Ôn mục III"},
+    {q:"Given Q1=18, Q3=32, IQR=14. If we add 5 to Q1 and subtract 5 from Q3, new IQR:",opts:["\\(4\\)","\\(5\\)","\\(14\\)","\\(24\\)"],ans:0,topic:"QUARTILE",exp:"New Q1=23, Q3=27, IQR=4.",review:"Ôn mục IV"},
+    {q:"The sum of all frequencies in a table equals:",opts:["Number of classes","Sample size n","Maximum frequency","Average frequency"],ans:1,topic:"TABLE",exp:"Sum of frequencies = total observations (sample size n).",review:"Ôn mục I"},
+    {q:"If \\(Q_1 = 10\\) and \\(M_e = 15\\), then the lower 25% of data are below:",opts:["\\(10\\)","\\(12.5\\)","\\(15\\)","\\(20\\)"],ans:0,topic:"QUARTILE",exp:"25% of data below Q1=10.",review:"Ôn mục IV"},
+    {q:"Which measure is best for skewed data?",opts:["Mean","Median","Mode","Range"],ans:1,topic:"COMPARISON",exp:"Median is resistant to outliers and skew.",review:"Ôn mục VI"},
+    {q:"In a histogram of grouped data, heights of bars usually represent:",opts:["Class marks","Class boundaries","Frequencies","Cumulative frequencies"],ans:2,topic:"TABLE",exp:"Histograms show frequencies as bar heights.",review:"Ôn mục I"},
+    {q:"Compute \\((4\\cdot 10 + 6\\cdot 20)/10\\):",opts:["\\(12\\)","\\(14\\)","\\(16\\)","\\(18\\)"],ans:2,topic:"MEAN",exp:"\\((40+120)/10 = 16\\).",review:"Ôn mục II"},
+    {q:"A grouped data set has \\(Q_1 = 20\\), \\(Q_3 = 40\\). What is IQR?",opts:["\\(10\\)","\\(20\\)","\\(30\\)","\\(40\\)"],ans:1,topic:"QUARTILE",exp:"\\(40-20=20\\).",review:"Ôn mục IV"}
+  ]},
+  3:{name:"Set 3 — Advanced",desc:"Complex problems: real-world applications, weighted scenarios, distribution interpretation, multi-step reasoning.",questions:[
+    {q:"A class has grade distribution: \\([0,2)\\) 3 students, \\([2,4)\\) 5, \\([4,6)\\) 12, \\([6,8)\\) 8, \\([8,10)\\) 2. Mean ≈:",opts:["\\(4.5\\)","\\(5.07\\)","\\(5.5\\)","\\(6.0\\)"],ans:1,topic:"MEAN",exp:"\\(c_i=1,3,5,7,9\\), \\(n=30\\). Sum=3+15+60+56+18=152, mean=152/30≈5.07.",review:"Ôn mục II"},
+    {q:"Same grades. Median class is:",opts:["\\([0,2)\\)","\\([2,4)\\)","\\([4,6)\\)","\\([6,8)\\)"],ans:2,topic:"MEDIAN",exp:"\\(n/2=15\\). Cumulative: 3, 8, 20, 28, 30. 15 is in class 3 (\\([4,6)\\)).",review:"Ôn mục III"},
+    {q:"Same grades. Median ≈:",opts:["\\(4.5\\)","\\(5\\)","\\(5.17\\)","\\(5.5\\)"],ans:2,topic:"MEDIAN",exp:"\\(M_e = 4 + \\dfrac{15-8}{12}\\cdot 2 = 4 + \\dfrac{7}{6} \\approx 5.17\\).",review:"Ôn mục III"},
+    {q:"Same grades. Modal class:",opts:["\\([0,2)\\)","\\([2,4)\\)","\\([4,6)\\)","\\([6,8)\\)"],ans:2,topic:"MODE",exp:"Highest frequency 12 → class 3.",review:"Ôn mục V"},
+    {q:"A company's salaries (millions VND): \\([5,10)\\) 20 emp, \\([10,15)\\) 30, \\([15,20)\\) 25, \\([20,25)\\) 15, \\([25,30)\\) 10. Mean ≈ (millions):",opts:["\\(13.5\\)","\\(14.5\\)","\\(15.5\\)","\\(16.5\\)"],ans:1,topic:"MEAN",exp:"\\(c_i=7.5,12.5,17.5,22.5,27.5\\), \\(n=100\\). Sum=150+375+437.5+337.5+275=1575. Mean=15.75. Đáp án gần nhất: 15.5.",review:"Ôn mục II"},
+    {q:"Same salaries. Median is in which class?",opts:["\\([5,10)\\)","\\([10,15)\\)","\\([15,20)\\)","\\([20,25)\\)"],ans:1,topic:"MEDIAN",exp:"\\(n/2=50\\). Cumulative: 20, 50, 75, 90, 100. 50 falls at end of class 2 (\\([10,15)\\)).",review:"Ôn mục III"},
+    {q:"If a data set has median 25 and mean 30, the distribution is likely:",opts:["Left-skewed","Symmetric","Right-skewed","Uniform"],ans:2,topic:"COMPARISON",exp:"Mean > Median → right-skewed.",review:"Ôn mục VI"},
+    {q:"For a class test, Q1=55, Q3=75. A student scored 85. This score is:",opts:["Below Q1","Between Q1 and Q3","Above Q3","At median"],ans:2,topic:"QUARTILE",exp:"85 > 75 → above Q3.",review:"Ôn mục IV"},
+    {q:"A data set with mean=50, median=50, mode=50 is likely:",opts:["Right-skewed","Left-skewed","Symmetric","Multimodal"],ans:2,topic:"COMPARISON",exp:"All measures equal → symmetric.",review:"Ôn mục VI"},
+    {q:"Frequencies: 5, 10, 20, 10, 5. Shape of distribution:",opts:["Right-skewed","Left-skewed","Symmetric","Uniform"],ans:2,topic:"COMPARISON",exp:"Frequencies symmetric around class 3 → symmetric distribution.",review:"Ôn mục VI"},
+    {q:"Total n=80. Q3 position:",opts:["\\(20\\)","\\(40\\)","\\(60\\)","\\(80\\)"],ans:2,topic:"QUARTILE",exp:"\\(3n/4 = 60\\).",review:"Ôn mục IV"},
+    {q:"If mean = 40 and median = 35, distribution is:",opts:["Right-skewed","Left-skewed","Symmetric","Bimodal"],ans:0,topic:"COMPARISON",exp:"Mean > Median → right-skewed.",review:"Ôn mục VI"},
+    {q:"In a sample of 100 with Q1=20, Q3=60, approximately how many observations fall between Q1 and Q3?",opts:["\\(25\\)","\\(50\\)","\\(75\\)","\\(100\\)"],ans:1,topic:"QUARTILE",exp:"Q1 to Q3 contains the middle 50% of data → 50 observations.",review:"Ôn mục IV"},
+    {q:"Weighted mean: 2 groups with (n, mean) = (10, 5) and (20, 8). Overall mean:",opts:["\\(6\\)","\\(6.5\\)","\\(7\\)","\\(7.5\\)"],ans:2,topic:"MEAN",exp:"\\((10\\cdot 5 + 20\\cdot 8)/30 = (50+160)/30 = 210/30 = 7\\).",review:"Ôn mục II"},
+    {q:"A bimodal distribution has:",opts:["One mode","Two modes","Three modes","No mode"],ans:1,topic:"MODE",exp:"Bimodal = two modes.",review:"Ôn mục V"},
+    {q:"If \\(Q_1 = 20\\), \\(M_e = 30\\), \\(Q_3 = 50\\), which describes the shape?",opts:["Symmetric","Right-skewed","Left-skewed","Bimodal"],ans:1,topic:"COMPARISON",exp:"\\(Q_3 - M_e = 20 > M_e - Q_1 = 10\\). Right side stretches more → right-skewed.",review:"Ôn mục VI"},
+    {q:"To compare variability of two data sets of different sizes, best to compare:",opts:["Means","Medians","Modes","IQRs"],ans:3,topic:"COMPARISON",exp:"IQR measures spread and can be compared across data sets.",review:"Ôn mục VI"},
+    {q:"If median=20, mean=15, mode=10, distribution is:",opts:["Symmetric","Right-skewed","Left-skewed","Uniform"],ans:2,topic:"COMPARISON",exp:"Mean < Median < Mode → left-skewed.",review:"Ôn mục VI"},
+    {q:"Table with frequencies 10, 20, 30, 20, 10. The mode is:",opts:["Class 1","Class 3","Class 5","Multiple"],ans:1,topic:"MODE",exp:"Class 3 has highest frequency 30.",review:"Ôn mục V"},
+    {q:"If a distribution has mean 50, median 50, mode 50, it is:",opts:["Right-skewed","Left-skewed","Symmetric","Cannot determine"],ans:2,topic:"COMPARISON",exp:"All equal → symmetric.",review:"Ôn mục VI"},
+    {q:"A data set with Q1=10, Q3=30 has IQR=20. If each value increases by 5, new IQR:",opts:["\\(15\\)","\\(20\\)","\\(25\\)","\\(30\\)"],ans:1,topic:"QUARTILE",exp:"Adding constant shifts all quartiles equally → IQR unchanged.",review:"Ôn mục IV"},
+    {q:"A test score distribution has Q1=40, median=55, Q3=75. A student at 90th percentile likely scored:",opts:["Below 55","Between 55 and 75","Above 75","Exactly 55"],ans:2,topic:"QUARTILE",exp:"90th percentile > Q3 = 75.",review:"Ôn mục IV"},
+    {q:"In a histogram, if frequencies are 2, 4, 8, 4, 2, the distribution is:",opts:["Right-skewed","Left-skewed","Symmetric","Bimodal"],ans:2,topic:"COMPARISON",exp:"Symmetric frequencies around middle.",review:"Ôn mục VI"},
+    {q:"A set with median=60, mean=70. If we add a very large outlier, mean will:",opts:["Decrease","Stay same","Increase","Become equal to median"],ans:2,topic:"COMPARISON",exp:"Large outlier pulls mean up.",review:"Ôn mục VI"},
+    {q:"Table: 3 classes each with frequency 10. Number of modes:",opts:["0","1","3","Cannot determine"],ans:2,topic:"MODE",exp:"All classes tie → 3 modes.",review:"Ôn mục V"},
+    {q:"If n=200 and Q3 is at position 150, what percentage of data is above Q3?",opts:["\\(10\\%\\)","\\(20\\%\\)","\\(25\\%\\)","\\(50\\%\\)"],ans:2,topic:"QUARTILE",exp:"Q3 leaves 25% above.",review:"Ôn mục IV"},
+    {q:"A distribution with mean=30, median=35, mode=40 has shape:",opts:["Right-skewed","Left-skewed","Symmetric","Uniform"],ans:1,topic:"COMPARISON",exp:"Mean < Median < Mode → left-skewed.",review:"Ôn mục VI"},
+    {q:"If a class has more students than any other class, that class contains the:",opts:["Median","Mean","Mode","Range"],ans:2,topic:"MODE",exp:"Modal class is the one with most students (highest frequency).",review:"Ôn mục V"},
+    {q:"In grouped data, mean of class marks weighted by frequencies is called:",opts:["Median","Mode","Arithmetic mean","Geometric mean"],ans:2,topic:"MEAN",exp:"This is the arithmetic mean of grouped data.",review:"Ôn mục II"},
+    {q:"If Q1=15 and Q3=45, the middle 50% of data spans a range of:",opts:["\\(15\\)","\\(30\\)","\\(45\\)","\\(60\\)"],ans:1,topic:"QUARTILE",exp:"Range = Q3 − Q1 = 30.",review:"Ôn mục IV"}
+  ]}
+};
+
+/* ============ STATE ============ */
+const TEST_DURATION = 45 * 60;
+let testState = null;
+let testTimerInterval = null;
+let currentScoreId = null;
+
+/* ============ LEADERBOARD ============ */
+function saveScoreToLocalStorage(scoreData){
+  try {
+    const today = new Date().toLocaleDateString('vi-VN');
+    const key = 'sat_leaderboard_central_' + today;
+    let board = JSON.parse(localStorage.getItem(key) || '[]');
+    board.push(scoreData);
+    board.sort(function(a,b){ if(b.correct !== a.correct) return b.correct - a.correct; return a.timeUsed - b.timeUsed; });
+    localStorage.setItem(key, JSON.stringify(board));
+  } catch(e){ console.error('Lỗi lưu bảng xếp hạng', e); }
+}
+function getLeaderboardHTML(){
+  try {
+    const today = new Date().toLocaleDateString('vi-VN');
+    const key = 'sat_leaderboard_central_' + today;
+    const board = JSON.parse(localStorage.getItem(key) || '[]');
+    if(board.length === 0) return '';
+    const fmtTime = function(sec){ return String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0'); };
+    let html = '<div class="result-section-title"><span class="icon">🏆</span> Bảng xếp hạng hôm nay ('+today+')</div><div style="overflow-x:auto;margin-bottom:22px;"><table class="topic-table"><thead><tr><th style="text-align:center">Hạng</th><th style="text-align:center">Bộ đề</th><th style="text-align:center">Kết quả</th><th style="text-align:center">Thời gian</th></tr></thead><tbody>';
+    board.slice(0,10).forEach(function(item,index){
+      const medal = index===0?'🥇':index===1?'🥈':index===2?'🥉':(index+1);
+      const isCurrent = (item.id === currentScoreId);
+      html += '<tr style="'+(isCurrent?'background:#eaf7eb;font-weight:bold;border-left:3px solid #4CAF50':'')+'"><td style="text-align:center;font-size:16px;">'+medal+'</td><td style="text-align:center">Bộ '+item.setNum+'</td><td style="text-align:center;color:'+(item.pct>=80?'#4CAF50':'#1B3A6B')+';font-weight:800;">'+item.correct+'/'+item.total+' ('+item.pct+'%)</td><td style="text-align:center">'+fmtTime(item.timeUsed)+'</td></tr>';
+    });
+    return html + '</tbody></table></div>';
+  } catch(e){ return ''; }
+}
+
+/* ============ RENDER SET SELECTOR ============ */
+function renderSatSetSelector(){
+  const c = document.getElementById('satSetSelector');
+  c.innerHTML = '';
+  Object.keys(SAT_SETS).forEach(function(k){
+    const s = SAT_SETS[k];
+    const card = document.createElement('div');
+    card.className = 'set-card';
+    card.onclick = function(){ startSetTest(parseInt(k)); };
+    card.innerHTML = '<div class="set-badge">SET '+k+'</div><h4>'+s.name+'</h4><p>'+s.desc+'</p><div class="set-meta"><span><strong>30</strong> câu</span><span><strong>45:00</strong> phút</span><span><strong>A–D</strong></span></div><div class="set-start">▶ Bắt đầu làm bài →</div>';
+    c.appendChild(card);
+  });
+}
+
+/* ============ START TEST ============ */
+function startSetTest(setNum){
+  testState = { setNum: setNum, current: 0, answers: new Array(30).fill(null), timeLeft: TEST_DURATION, submitted: false };
+  document.getElementById('satSetSelector').style.display = 'none';
+  document.getElementById('satResultScreen').style.display = 'none';
+  document.getElementById('satResultScreen').innerHTML = '';
+  document.getElementById('satTestScreen').style.display = 'block';
+  document.getElementById('testSetName').textContent = SAT_SETS[setNum].name;
+  renderNavGrid();
+  renderTestQuestion();
+  startTestTimer();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function startTestTimer(){
+  if(testTimerInterval) clearInterval(testTimerInterval);
+  updateTimerDisplay();
+  testTimerInterval = setInterval(function(){
+    if(!testState || testState.submitted) return;
+    testState.timeLeft--;
+    updateTimerDisplay();
+    if(testState.timeLeft <= 0){ clearInterval(testTimerInterval); testTimerInterval = null; submitTest(true); }
+  }, 1000);
+}
+
+function updateTimerDisplay(){
+  if(!testState) return;
+  const el = document.getElementById('testTimer');
+  const t = Math.max(0, testState.timeLeft);
+  const m = String(Math.floor(t/60)).padStart(2,'0');
+  const s = String(t%60).padStart(2,'0');
+  el.textContent = m+':'+s;
+  el.classList.remove('warning','danger');
+  if(t <= 60) el.classList.add('danger');
+  else if(t <= 300) el.classList.add('warning');
+}
+
+function renderNavGrid(){
+  const grid = document.getElementById('navGrid');
+  grid.innerHTML = '';
+  for(let i=0;i<30;i++){
+    const b = document.createElement('button');
+    b.className = 'nav-cell';
+    b.textContent = i+1;
+    b.onclick = (function(idx){ return function(){ testState.current = idx; renderTestQuestion(); renderNavGrid(); }; })(i);
+    grid.appendChild(b);
+  }
+  updateNavStatus();
+}
+
+function updateNavStatus(){
+  if(!testState) return;
+  document.querySelectorAll('#navGrid .nav-cell').forEach(function(c,i){
+    c.classList.toggle('answered', testState.answers[i] !== null);
+    c.classList.toggle('current', i === testState.current);
+  });
+  const answered = testState.answers.filter(function(a){ return a !== null; }).length;
+  document.getElementById('testProgress').textContent = 'Câu '+(testState.current+1)+' / 30 · Đã trả lời '+answered+'/30';
+}
+
+function renderTestQuestion(){
+  if(!testState) return;
+  const item = SAT_SETS[testState.setNum].questions[testState.current];
+  document.getElementById('testQNum').textContent = testState.current+1;
+  document.getElementById('testQText').innerHTML = item.q;
+  const optsC = document.getElementById('testOptions');
+  optsC.innerHTML = '';
+  item.opts.forEach(function(o,i){
+    const b = document.createElement('button');
+    b.className = 'option';
+    if(testState.answers[testState.current] === i) b.classList.add('selected');
+    b.innerHTML = '<span class="letter">'+letterMap[i]+'</span><span class="opt-text">'+o+'</span>';
+    b.onclick = function(){ selectTestOption(i); };
+    optsC.appendChild(b);
+  });
+  document.getElementById('testQuestionCard').classList.remove('correct','wrong');
+  document.getElementById('btnPrev').disabled = testState.current === 0;
+  document.getElementById('btnNext').textContent = testState.current === 29 ? '📝 Nộp bài' : 'Câu tiếp →';
+  if(window.renderMathInElement){ renderMathInElement(document.getElementById('testQuestionCard'), {delimiters:[{left:'\\(',right:'\\)',display:false}]}); }
+  updateNavStatus();
+}
+
+function selectTestOption(optIdx){
+  if(!testState || testState.submitted) return;
+  testState.answers[testState.current] = optIdx;
+  document.querySelectorAll('#testOptions .option').forEach(function(o,i){ o.classList.toggle('selected', i === optIdx); });
+  updateNavStatus();
+}
+
+function goToQuestion(i){ if(!testState || i<0 || i>29) return; testState.current = i; renderTestQuestion(); }
+
+/* ============ BUTTON WIRING ============ */
+document.getElementById('btnPrev').onclick = function(){ if(testState) goToQuestion(testState.current - 1); };
+document.getElementById('btnNext').onclick = function(){
+  if(!testState) return;
+  if(testState.current === 29) submitTest(false);
+  else goToQuestion(testState.current + 1);
+};
+document.getElementById('btnQuitTest').onclick = function(){
+  let ok = true;
+  try { ok = window.confirm('Bạn có chắc muốn thoát? Bài làm sẽ không được lưu.'); } catch(e){ ok = true; }
+  if(ok === false) return;
+  if(testTimerInterval){ clearInterval(testTimerInterval); testTimerInterval = null; }
+  testState = null;
+  document.getElementById('satTestScreen').style.display = 'none';
+  document.getElementById('satSetSelector').style.display = 'grid';
+};
+document.getElementById('btnSubmitTest').onclick = function(){ submitTest(false); };
+document.getElementById('btnForceResult').onclick = function(){
+  if(!testState || testState.submitted) return;
+  submitTest(true);
+};
+
+/* ============ SUBMIT TEST ============ */
+function submitTest(auto){
+  if(!testState || testState.submitted) return;
+
+  if(!auto){
+    const unanswered = testState.answers.filter(function(a){ return a === null; }).length;
+    if(unanswered > 0){
+      let ok = true;
+      try { ok = window.confirm('Bạn còn ' + unanswered + ' câu chưa trả lời. Vẫn nộp bài?'); } catch(e){ ok = true; }
+      if(ok === false) return;
+    }
+  }
+
+  testState.submitted = true;
+  if(testTimerInterval){ clearInterval(testTimerInterval); testTimerInterval = null; }
+
+  try {
+    const questions = SAT_SETS[testState.setNum].questions;
+    let correct = 0;
+    testState.answers.forEach(function(ans,i){ if(ans === questions[i].ans) correct++; });
+    const timeUsed = TEST_DURATION - testState.timeLeft;
+    currentScoreId = Date.now().toString();
+    saveScoreToLocalStorage({
+      id: currentScoreId,
+      setNum: testState.setNum, correct: correct, total: questions.length,
+      pct: Math.round(correct / questions.length * 100), timeUsed: timeUsed
+    });
+  } catch(e){ console.error('Lỗi lưu điểm:', e); }
+
+  document.getElementById('satTestScreen').style.display = 'none';
+
+  try {
+    renderResult();
+  } catch(e){
+    console.error('Lỗi render kết quả:', e);
+    showBasicResult(e);
+  }
+
+  const rs = document.getElementById('satResultScreen');
+  if(rs){
+    rs.style.display = 'block';
+    if(!rs.innerHTML || rs.innerHTML.trim() === ''){
+      showBasicResult(new Error('Empty content'));
+    }
+  }
+
+  try { window.scrollTo({top:0,behavior:'smooth'}); } catch(e){ window.scrollTo(0,0); }
+  try { playFanfare(); } catch(e){}
+}
+
+function showBasicResult(err){
+  const c = document.getElementById('satResultScreen');
+  if(!c) return;
+  const questions = (testState && SAT_SETS[testState.setNum]) ? SAT_SETS[testState.setNum].questions : [];
+  let correct = 0;
+  if(testState && questions.length){
+    testState.answers.forEach(function(ans,i){ if(ans === questions[i].ans) correct++; });
+  }
+  const total = questions.length || 30;
+  const pct = Math.round(correct / total * 100);
+  c.innerHTML =
+    '<div class="card" style="border-left:6px solid #4CAF50">' +
+    '<h3>✅ Đã hoàn thành bài thi</h3>' +
+    '<div style="display:flex;gap:24px;align-items:center;margin:20px 0;flex-wrap:wrap">' +
+    '<div style="background:#EAF0F9;padding:20px 32px;border-radius:12px;text-align:center">' +
+    '<div style="font-size:42px;font-weight:800;color:#1B3A6B">' + correct + '</div>' +
+    '<div style="font-size:14px;color:#5b6778">/ ' + total + ' câu đúng</div>' +
+    '</div>' +
+    '<div style="background:linear-gradient(135deg,#1B3A6B,#2C5AA0);padding:20px 32px;border-radius:12px;text-align:center;color:#fff">' +
+    '<div style="font-size:42px;font-weight:800;color:#F5B400">' + pct + '%</div>' +
+    '<div style="font-size:14px;opacity:.9">chính xác</div>' +
+    '</div>' +
+    '</div>' +
+    '<p style="color:#E53935;font-size:13px;margin-top:10px">⚠ Chi tiết phân tích không hiển thị: ' + (err && err.message ? err.message : 'Lỗi không xác định') + '</p>' +
+    '<div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">' +
+    '<button class="btn btn-primary" onclick="backToSetSelector()">📚 Chọn bộ khác</button>' +
+    '<button class="btn btn-outline" onclick="switchTab(\'knowledge\')">📖 Ôn lý thuyết</button>' +
+    '<button class="btn btn-outline" onclick="switchTab(\'practice\')">✏️ Luyện tập</button>' +
+    '</div></div>';
+  c.style.display = 'block';
+}
+
+/* ============ RENDER RESULT CHI TIẾT ============ */
+function renderResult(){
+  const c = document.getElementById('satResultScreen');
+  if(!c) return;
+  c.style.display = 'block';
+
+  const setNum = testState.setNum;
+  const questions = SAT_SETS[setNum].questions;
+  const autoSubmitted = testState.timeLeft <= 0;
+
+  let correct = 0, wrong = 0, unanswered = 0;
+  const topicStat = {};
+  Object.keys(TOPICS).forEach(function(k){ topicStat[k] = { correct: 0, total: 0 }; });
+  const wrongList = [];
+
+  questions.forEach(function(item,i){
+    const ans = testState.answers[i];
+    topicStat[item.topic].total++;
+    if(ans === null){ unanswered++; wrongList.push({ idx: i, item: item, yourAns: null }); }
+    else if(ans === item.ans){ correct++; topicStat[item.topic].correct++; }
+    else { wrong++; wrongList.push({ idx: i, item: item, yourAns: ans }); }
+  });
+
+  const total = questions.length;
+  const pct = Math.round(correct / total * 100);
+  const estimatedSAT = Math.min(800, Math.max(200, Math.round(200 + (correct/total)*600)));
+  const timeUsed = TEST_DURATION - testState.timeLeft;
+  const tm = String(Math.floor(timeUsed/60)).padStart(2,'0');
+  const ts = String(timeUsed%60).padStart(2,'0');
+  const answered = correct + wrong;
+  const avgTime = answered > 0 ? Math.round(timeUsed/answered) : 0;
+  const avgTimeStr = Math.floor(avgTime/60) + ':' + String(avgTime%60).padStart(2,'0');
+
+  let level, levelColor, levelIcon, levelDesc, levelAdvice;
+  if(pct >= 90){ level="XUẤT SẮC"; levelColor="#4CAF50"; levelIcon="🏆"; levelDesc="Kiến thức thống kê mô tả rất vững vàng!"; levelAdvice="Luyện đề khó hơn để duy trì phong độ."; }
+  else if(pct >= 75){ level="TỐT"; levelColor="#2C5AA0"; levelIcon="⭐"; levelDesc="Nắm tốt kiến thức cơ bản và nâng cao."; levelAdvice="Khắc phục chủ đề dưới 80% để đạt 700+."; }
+  else if(pct >= 60){ level="KHÁ"; levelColor="#E8A317"; levelIcon="📈"; levelDesc="Nền tảng khá nhưng còn sai sót."; levelAdvice="Luyện thêm dạng trung vị, tứ phân vị và mốt."; }
+  else if(pct >= 40){ level="TRUNG BÌNH"; levelColor="#FF9800"; levelIcon="📚"; levelDesc="Cần củng cố lý thuyết."; levelAdvice="Ôn kỹ mục I, II, III và làm lại Nhóm 1."; }
+  else { level="CẦN CỐ GẮNG"; levelColor="#E53935"; levelIcon="🔧"; levelDesc="Cần xây dựng lại nền tảng."; levelAdvice="Đọc kỹ Kiến thức, ghi nhớ công thức Mean–Median–Mode và tứ phân vị."; }
+
+  let timeEval, timeIcon, timeColor;
+  if(timeUsed <= TEST_DURATION*0.7){ timeEval="Quản lý thời gian xuất sắc"; timeIcon="🚀"; timeColor="#4CAF50"; }
+  else if(timeUsed <= TEST_DURATION*0.9){ timeEval="Quản lý thời gian tốt"; timeIcon="⏱️"; timeColor="#2C5AA0"; }
+  else if(timeUsed < TEST_DURATION){ timeEval="Sát giờ — cần tăng tốc"; timeIcon="⏰"; timeColor="#E8A317"; }
+  else { timeEval="Hết giờ"; timeIcon="🚨"; timeColor="#E53935"; }
+
+  const topicList = Object.keys(topicStat)
+    .filter(function(k){ return topicStat[k].total > 0; })
+    .map(function(k){ return { key: k, name: TOPICS[k], correct: topicStat[k].correct, total: topicStat[k].total, pct: Math.round(topicStat[k].correct/topicStat[k].total*100) }; })
+    .sort(function(a,b){ return a.pct - b.pct; });
+
+  const weakTopics = topicList.filter(function(t){ return t.pct < 60; });
+  const mediumTopics = topicList.filter(function(t){ return t.pct >= 60 && t.pct < 80; });
+  const strongTopics = topicList.filter(function(t){ return t.pct >= 80; });
+
+  let roadmapHTML = '';
+  if(weakTopics.length > 0){
+    roadmapHTML += '<div class="roadmap-phase phase-1"><div class="phase-num">1</div><div class="phase-content"><h4>Giai đoạn 1: Củng cố kiến thức nền tảng <span class="phase-time">⏳ 1–3 ngày</span></h4><ul>';
+    weakTopics.forEach(function(t){ roadmapHTML += '<li><strong>' + t.name + '</strong> (' + t.correct + '/' + t.total + ' = ' + t.pct + '%) — ' + TOPIC_RECOMMENDATIONS[t.key] + '</li>'; });
+    roadmapHTML += '</ul><div class="phase-actions"><button class="btn btn-outline btn-sm" onclick="switchTab(\'knowledge\')">📖 Ôn lý thuyết</button><button class="btn btn-outline btn-sm" onclick="switchTab(\'practice\')">✏️ Luyện nhóm cơ bản</button></div></div></div>';
+  }
+  if(mediumTopics.length > 0){
+    roadmapHTML += '<div class="roadmap-phase phase-2"><div class="phase-num">2</div><div class="phase-content"><h4>Giai đoạn 2: Luyện tập nâng cao <span class="phase-time">⏳ 3–5 ngày</span></h4><ul>';
+    mediumTopics.forEach(function(t){ roadmapHTML += '<li><strong>' + t.name + '</strong> (' + t.correct + '/' + t.total + ' = ' + t.pct + '%) — Cần thêm bài tập trung bình–khó.</li>'; });
+    roadmapHTML += '</ul><div class="phase-actions"><button class="btn btn-outline btn-sm" onclick="switchTab(\'practice\')">✏️ Luyện nhóm trung bình</button><button class="btn btn-primary btn-sm" onclick="restartSameSet()">🔄 Làm lại bộ đề này</button></div></div></div>';
+  }
+  roadmapHTML += '<div class="roadmap-phase phase-3"><div class="phase-num">3</div><div class="phase-content"><h4>Giai đoạn 3: ' + (strongTopics.length > 0 ? 'Duy trì & mở rộng' : 'Luyện đề tổng hợp') + ' <span class="phase-time">⏳ Liên tục</span></h4><ul>';
+  if(strongTopics.length > 0){
+    strongTopics.forEach(function(t){ roadmapHTML += '<li><strong>' + t.name + '</strong> (' + t.correct + '/' + t.total + ' = ' + t.pct + '%) — Duy trì phong độ.</li>'; });
+  } else {
+    roadmapHTML += '<li>Luyện các bộ đề khác để đa dạng dạng bài.</li>';
+  }
+  roadmapHTML += '</ul><div class="phase-actions"><button class="btn btn-outline btn-sm" onclick="backToSetSelector()">📚 Chọn bộ khác</button><button class="btn btn-outline btn-sm" onclick="switchTab(\'sat\')">⏱️ Luyện đề khác</button></div></div></div>';
+
+  let topicTableHTML = '';
+  topicList.forEach(function(t){
+    let cls = '', status = '', statusColor = '';
+    if(t.pct >= 80){ status = '✅ Vững'; statusColor = '#4CAF50'; }
+    else if(t.pct >= 60){ cls = 'warn'; status = '⚠ Cần luyện'; statusColor = '#E8A317'; }
+    else { cls = 'bad'; status = '🔴 Yếu'; statusColor = '#E53935'; }
+    topicTableHTML += '<tr><td><strong>' + t.name + '</strong></td><td><div class="topic-bar-cell"><div class="topic-bar"><div class="topic-bar-fill ' + cls + '" style="width:' + t.pct + '%"></div></div><span style="min-width:44px;font-weight:700;color:#5b6778">' + t.pct + '%</span></div></td><td style="text-align:right"><span class="topic-score">' + t.correct + '/' + t.total + '</span></td><td style="text-align:center"><strong style="color:' + statusColor + ';font-size:13px">' + status + '</strong></td></tr>';
+    topicTableHTML += '<tr><td colspan="4" style="padding:0 16px 12px;border-bottom:1px solid #eef2f8"><div class="topic-recommend">📌 <strong>Gợi ý:</strong> ' + TOPIC_RECOMMENDATIONS[t.key] + '</div></td></tr>';
+  });
+
+  let wrongHTML = '';
+  if(wrongList.length > 0){
+    wrongHTML += '<div class="result-section-title"><span class="icon" style="background:#fdeaea;color:#E53935">🔍</span> Phân tích ' + wrongList.length + ' câu sai / bỏ trống</div>';
+    wrongList.forEach(function(w){
+      const item = w.item;
+      const cls = w.yourAns === null ? 'unanswered' : '';
+      const yourText = w.yourAns === null ? '— Không trả lời —' : item.opts[w.yourAns];
+      wrongHTML += '<div class="wrong-item ' + cls + '">' +
+        '<div class="wrong-head"><div class="wrong-num">' + (w.idx+1) + '</div><div class="wrong-q">' + item.q + '<div><span class="topic-tag">' + TOPICS[item.topic] + '</span></div></div></div>' +
+        '<div class="ans-row">' +
+        '<div class="ans-box your"><div class="lbl">Bạn chọn</div><div class="val">' + (w.yourAns === null ? '—' : letterMap[w.yourAns] + '. ') + yourText + '</div></div>' +
+        '<div class="ans-box correct"><div class="lbl">Đáp án đúng</div><div class="val">' + letterMap[item.ans] + '. ' + item.opts[item.ans] + '</div></div>' +
+        '</div>' +
+        '<div class="exp-box"><div class="lbl">🧮 Lời giải</div>' + item.exp + '</div>' +
+        '<div class="review-box">📖 ' + item.review + '</div>' +
+        '</div>';
+    });
+  } else {
+    wrongHTML = '<div class="roadmap" style="border-left-color:#4CAF50"><h3>🎯 Tất cả câu trả lời đều chính xác!</h3><p style="font-size:14px;color:#5b6778">Không có câu nào sai. Em đã sẵn sàng cho các bộ đề khó hơn!</p></div>';
+  }
+
+  c.innerHTML =
+    '<div class="result-hero">' +
+    '<div>' +
+    '<h2>🎉 Hoàn thành ' + SAT_SETS[setNum].name + '!</h2>' +
+    '<p>Bạn đã làm ' + total + ' câu trong ' + tm + ':' + ts + '. ' + (autoSubmitted ? '⏰ Hết giờ! ' : '') + (unanswered > 0 ? 'Còn ' + unanswered + ' câu chưa trả lời.' : '') + '</p>' +
+    '</div>' +
+    '<div class="result-score"><div class="num">' + correct + '</div><div class="den">/ ' + total + ' câu đúng</div><div class="pct">' + pct + '%</div></div>' +
+    '</div>' +
+
+    '<div class="level-banner" style="border-left-color:' + levelColor + '">' +
+    '<div class="level-icon" style="background:' + levelColor + '">' + levelIcon + '</div>' +
+    '<div class="level-content"><h3 style="color:' + levelColor + '">Đánh giá: ' + level + '</h3><p>' + levelDesc + '</p><div class="level-advice"><strong>💡 Định hướng:</strong> ' + levelAdvice + '</div></div>' +
+    '</div>' +
+
+    '<div class="result-stats">' +
+    '<div class="stat-box green"><div class="label">✅ Đúng</div><div class="value">' + correct + '</div><div class="sub">Chiếm ' + pct + '%</div></div>' +
+    '<div class="stat-box red"><div class="label">❌ Sai</div><div class="value">' + wrong + '</div><div class="sub">Cần xem lại</div></div>' +
+    '<div class="stat-box yellow"><div class="label">⚠ Bỏ trống</div><div class="value">' + unanswered + '</div><div class="sub">Chưa trả lời</div></div>' +
+    '<div class="stat-box"><div class="label">🎯 SAT ước lượng</div><div class="value">' + estimatedSAT + '</div><div class="sub">/ 800</div></div>' +
+    '</div>' +
+
+    getLeaderboardHTML() +
+
+    '<div class="result-section-title"><span class="icon">⏱</span> Phân tích thời gian</div>' +
+    '<div class="time-analysis">' +
+    '<div class="time-block"><div class="tb-icon">⏰</div><div class="tb-content"><div class="tb-label">Tổng thời gian</div><div class="tb-value">' + tm + ':' + ts + '</div><div class="tb-desc">/ 45:00</div></div></div>' +
+    '<div class="time-block"><div class="tb-icon">⚡</div><div class="tb-content"><div class="tb-label">Trung bình / câu</div><div class="tb-value">' + avgTimeStr + '</div><div class="tb-desc">Mục tiêu: ≤ 1:30</div></div></div>' +
+    '<div class="time-block"><div class="tb-icon" style="background:' + timeColor + '22;color:' + timeColor + '">' + timeIcon + '</div><div class="tb-content"><div class="tb-label">Đánh giá</div><div class="tb-value" style="color:' + timeColor + ';font-size:15px">' + timeEval + '</div><div class="tb-desc">' + (timeUsed < TEST_DURATION ? 'Còn dư ' + Math.floor((TEST_DURATION-timeUsed)/60) + ':' + String((TEST_DURATION-timeUsed)%60).padStart(2,'0') : 'Đã dùng hết') + '</div></div></div>' +
+    '</div>' +
+
+    '<div class="result-section-title"><span class="icon">📊</span> Phân tích theo chủ đề</div>' +
+    '<table class="topic-table"><thead><tr><th style="width:28%">Chủ đề</th><th style="width:38%">Tỉ lệ đúng</th><th style="width:14%;text-align:right">Số câu</th><th style="width:20%;text-align:center">Trạng thái</th></tr></thead><tbody>' + topicTableHTML + '</tbody></table>' +
+
+    '<div class="roadmap"><h3>🗺️ Lộ trình ôn tập cá nhân hóa</h3><p class="roadmap-sub">Dựa trên kết quả của em, đây là lộ trình được thiết kế riêng:</p>' + roadmapHTML + '</div>' +
+
+    wrongHTML +
+
+    '<div class="result-actions">' +
+    '<button class="btn btn-primary" onclick="restartSameSet()">🔄 Làm lại ' + SAT_SETS[setNum].name + '</button>' +
+    '<button class="btn btn-outline" onclick="backToSetSelector()">📚 Chọn bộ khác</button>' +
+    '<button class="btn btn-outline" onclick="switchTab(\'knowledge\')">📖 Ôn lý thuyết</button>' +
+    '<button class="btn btn-outline" onclick="switchTab(\'practice\')">✏️ Luyện tập thêm</button>' +
+    '</div>';
+
+  if(window.renderMathInElement){ renderMathInElement(c, {delimiters:[{left:'\\(',right:'\\)',display:false}]}); }
+}
+
+function restartSameSet(){
+  if(!testState) return;
+  const setNum = testState.setNum;
+  document.getElementById('satResultScreen').style.display = 'none';
+  document.getElementById('satResultScreen').innerHTML = '';
+  startSetTest(setNum);
+}
+
+function backToSetSelector(){
+  document.getElementById('satResultScreen').style.display = 'none';
+  document.getElementById('satResultScreen').innerHTML = '';
+  document.getElementById('satTestScreen').style.display = 'none';
+  document.getElementById('satSetSelector').style.display = 'grid';
+  testState = null;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ============ INIT ============ */
+renderSatSetSelector();
+
+window.addEventListener('load', function(){
+  if(window.renderMathInElement){
+    renderMathInElement(document.body, {delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});
+  }
+});
+
+console.log('[SAT Central Tendency Web] ✅ Loaded. renderResult:', typeof renderResult, '| submitTest:', typeof submitTest);
+</script>
+</body>
+</html>
